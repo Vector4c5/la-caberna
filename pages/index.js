@@ -1,48 +1,69 @@
 import Image from "next/image";
-import logo from "../public/logo_la_caberna.jpeg";
-import cabaña from "../public/la_caberna2.jpeg";
+import Fondo_bienvenida from "../public/img_inicio.jpeg";
+import React, { useRef, useEffect } from 'react';
 
 export default function Home() {
-  
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      let flickerTimeoutId;
+      let steadyTimeoutId;
+
+      const flickerEffect = () => {
+        const boxShadow = Math.random() > 0.5
+          ? '0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.6)'
+          : '0 0 2px rgba(255, 255, 255, 0.1), 0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.3)';
+        container.style.boxShadow = boxShadow;
+      };
+
+      const startFlicker = () => {
+        flickerTimeoutId = setTimeout(() => {
+          flickerEffect();
+          startFlicker();
+        }, Math.random() * 100); // Intervalo aleatorio para parpadeo rápido
+      };
+
+      const flickerPattern = () => {
+        // Iniciar el parpadeo
+        startFlicker();
+
+        // Detener el parpadeo después de 1 segundo y encender la luz fija
+        steadyTimeoutId = setTimeout(() => {
+          clearTimeout(flickerTimeoutId);
+          container.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.8)';
+
+          // Mantener la luz encendida durante 3 segundos antes de volver a parpadear
+          steadyTimeoutId = setTimeout(flickerPattern, 3000); // 
+        }, 1000); 
+      };
+
+      flickerPattern();
+
+      return () => {
+        clearTimeout(flickerTimeoutId);
+        clearTimeout(steadyTimeoutId);
+      }; // Limpia los timeouts cuando el componente se desmonte
+    }
+  }, []);
+
   return (
     <>
-      <div className="flex flex-col min-h-screen w-full bg-white p-0">
-        <div id="Encabezado" className="relative flex w-full h-96 items-center justify-between  bg-green-300">
-          <Image src={cabaña} alt="Cabaña" className="absolute inset-0 w-full h-full object-cover" />         
-          <div id="text-of-Encabezado" className="relative">
-            <div className="object-left-bottom flex flex-col">
-              <h1 className="text-3xl font-bold text-white">La Caberna</h1>
-              <p className="text-white">¡¡Únete a la aventura!!</p>
-            </div>
-            <Image src={logo} alt="Logo" className="w-40 h-40 object-right-bottom" />
-          </div>
-        </div>
+      <div id="Body" className="flex flex-col justify-center items-center bg-black min-w-full min-h-screen p-0 m-0">
+        <Image src={Fondo_bienvenida} alt="Descripción de la imagen"
+        className=" relative m-0 w-full min-h-screen object-cover z-0 opacity-25 "
+        />  
+        <div ref={containerRef}  id="Bienvenida"
+        className="absolute flex flex-col items-center justify-center font-serif h-5/6 w-2/5 border-4 border-white rounded-full shrink
+        space-y-2">
+          <h1 className="text-8xl text-center ">La Caverna</h1>
+          <p className="text-center text-2xl">Un mundo de aventuras te espera. ¿Estás listo?</p>
+          <button>Start!</button>
 
-        <div id="Introduccion" className="h-1/2 flex flex-col items-center justify-center bg-blue-500 p-4">
-          <h1 className="text-2xl font-bold">Aquí irá una breve descripción acerca de la página web y de lo que se quiere lograr</h1>
-          <p>Los juegos de rol son divertidos</p>
-        </div>
 
-        <div id="Enlaces" className="h-1/2 flex flex-row items-center justify-center bg-red-500 p-4">
-          <a id="Jugadores" className="mb-4">
-            <h1 className="text-xl font-bold">Aprende a jugar</h1>
-            <p>Echa un vistazo a nuestras guías</p>
-          </a>
-          <a id="Masters" className="mb-4">
-            <h1 className="text-xl font-bold">Crea tu próxima aventura</h1>
-            <p>Ven y nutre tu imaginación con lo que tenemos para ti</p>
-          </a>
-
-          <a id="Comunidad">
-            <h1 className="text-xl font-bold">Únete a nuestra comunidad</h1>
-            <p>Únete a nosotros y vive grandes aventuras</p>
-          </a>
         </div>
       </div>
     </>
   );
 }
-
-
-     
-
