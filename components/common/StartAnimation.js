@@ -28,7 +28,7 @@ const StarAnimation = ({ durationRange = [10, 24], interval = 150 }) => {
   }, [interval, durationRange]);
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+    <div className="fixed w-full h-screen pointer-events-none">
       {stars.map((star) => (
         <div
           key={star.id}
@@ -38,7 +38,7 @@ const StarAnimation = ({ durationRange = [10, 24], interval = 150 }) => {
             height: `${star.size}px`,
             left: `${star.x}px`,
             top: `${star.y}px`,
-            boxShadow: `0 0 ${star.size * 2}px 4px rgba(255, 255, 255, 0.6)`,
+            boxShadow: `0 0 ${star.size * 2}px 1px rgba(255, 255, 255, 0.6)`,
             animation: `moveUp ${star.duration}s linear forwards`,
           }}
         />

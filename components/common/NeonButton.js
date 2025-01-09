@@ -5,7 +5,7 @@ const NeonButton = ({ children, href, onClick }) => {
   const content = (
     <motion.button
       onClick={onClick}
-      className="w-1/4 h-16 rounded-lg text-lg font-bold"
+      className="w-full h-16 rounded-lg text-lg font-bold"
       style={{
         backgroundColor: "#141414",
         color: "#00ffcc",
@@ -14,7 +14,7 @@ const NeonButton = ({ children, href, onClick }) => {
       }}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{
         scale: 1.1,
         backgroundColor: "#00ffcc",

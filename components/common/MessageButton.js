@@ -14,7 +14,7 @@ const MessageButton = ({ children, message, onClick }) => {
   return (
     <motion.button
       onClick={handleClick}
-      className="w-1/4 h-16 rounded-lg text-lg font-bold"
+      className="w-full h-16 rounded-lg text-lg font-bold"
       style={{
         backgroundColor: "#141414",
         color: "#ff007f",
