@@ -1,69 +1,92 @@
 import Image from "next/image";
+import React, { useState, useRef, useEffect } from "react";
 import Fondo_bienvenida from "../public/img_inicio.jpeg";
-import React, { useRef, useEffect } from 'react';
+import Fondo_interior_caverna from "../public/img_interior_caberna.jpeg";
+import NeonButton from "@/components/common/NeonButton";
+import SeccionButton from "@/components/common/SeccionButton"; // Importar el nuevo botón
+import { Toaster } from 'react-hot-toast'; // Importar Toaster
+import MessageButton from "@/components/common/MessageButton ";
 
 export default function Home() {
+  const [showFirst, setShowFirst] = useState(true);
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      let flickerTimeoutId;
-      let steadyTimeoutId;
-
-      const flickerEffect = () => {
-        const boxShadow = Math.random() > 0.5
-          ? '0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.6)'
-          : '0 0 2px rgba(255, 255, 255, 0.1), 0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.3)';
-        container.style.boxShadow = boxShadow;
-      };
-
-      const startFlicker = () => {
-        flickerTimeoutId = setTimeout(() => {
-          flickerEffect();
-          startFlicker();
-        }, Math.random() * 100); // Intervalo aleatorio para parpadeo rápido
-      };
-
-      const flickerPattern = () => {
-        // Iniciar el parpadeo
-        startFlicker();
-
-        // Detener el parpadeo después de 1 segundo y encender la luz fija
-        steadyTimeoutId = setTimeout(() => {
-          clearTimeout(flickerTimeoutId);
-          container.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.8)';
-
-          // Mantener la luz encendida durante 3 segundos antes de volver a parpadear
-          steadyTimeoutId = setTimeout(flickerPattern, 3000); // 
-        }, 1000); 
-      };
-
-      flickerPattern();
-
-      return () => {
-        clearTimeout(flickerTimeoutId);
-        clearTimeout(steadyTimeoutId);
-      }; // Limpia los timeouts cuando el componente se desmonte
-    }
-  }, []);
+  const toggleSection = () => setShowFirst(!showFirst);
 
   return (
-    <>
-      <div id="Body" className="flex flex-col justify-center items-center bg-black min-w-full min-h-screen p-0 m-0">
-        <Image src={Fondo_bienvenida} alt="Descripción de la imagen"
-        className=" relative m-0 w-full min-h-screen object-cover z-0 opacity-25 "
-        />  
-        <div ref={containerRef}  id="Bienvenida"
-        className="absolute flex flex-col items-center justify-center font-serif h-5/6 w-2/5 border-4 border-white rounded-full shrink
-        space-y-2">
-          <h1 className="text-8xl text-center ">La Caverna</h1>
-          <p className="text-center text-2xl">Un mundo de aventuras te espera. ¿Estás listo?</p>
-          <button>Start!</button>
-
-
+    <div className="flex flex-col items-center relative w-full h-screen bg-black">
+      <div
+        className={`absolute transition-opacity duration-700 ${
+          showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        } min-w-full min-h-screen flex flex-col items-center justify-center`}
+      >
+        <Image
+          src={Fondo_bienvenida}
+          alt="Descripción de la imagen"
+          className="relative opacity-25 h-screen z-2"
+        />
+        <div
+          ref={containerRef}
+          className="absolute flex flex-col items-center justify-center border-4 border-white rounded-full"
+          style={{
+            width: 'clamp(200px, 30vw, 500px)',
+            aspectRatio: '1',
+          }}
+        >
+          <h1 className="text-center font-bold text-white text-7xl">La Caverna</h1>
+          <p className="text-center text-white">Un mundo de aventuras te espera.</p>
+          <button
+            onClick={toggleSection}
+            className="mt-4 px-4 py-2 bg-white text-black rounded-lg h-max w-fit text-sm font-semibold 
+            hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white 
+            hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+          >
+            ¡¡Inicia tu aventura!!
+          </button>
         </div>
       </div>
-    </>
+
+      <div
+        className={`absolute transition-opacity duration-700 ${
+          !showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        } flex flex-col items-center justify-center`}
+      >
+        <Image
+          src={Fondo_interior_caverna}
+          alt="Descripción de la imagen"
+          className="relative opacity-25 h-screen z-2"
+        />
+        <div className="flex flex-col absolute object-center">
+        <div>
+            {/* Usando NeonButton */}
+            <NeonButton href="https://www.ejemplo.com">
+              Visitar Ejemplo
+            </NeonButton>
+          </div>
+
+          <div>
+            {/* Usando MessageButton con mensaje personalizado */}
+            <MessageButton message="¡Bienvenido a la Caverna, aventura te espera!" >
+              ¡Haz clic aquí para empezar!
+            </MessageButton>
+          </div>
+          <div>
+            {/* Usando SeccionButton con mensaje personalizado y enlace */}
+            <SeccionButton 
+              message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura." 
+              link="https://www.ejemplo.com"
+            >
+              ¡Haz clic para empezar tu aventura!
+            </SeccionButton>
+          </div>
+
+          <h1 className="text-4xl text-white">Segunda Sección</h1>
+          <p className="text-lg text-white">Esta es la segunda sección visible.</p>
+        </div>
+      </div>
+
+      {/* Toaster para mostrar los mensajes */}
+      <Toaster position="top-center" />
+    </div>
   );
 }
