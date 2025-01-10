@@ -5,7 +5,7 @@ const NeonButton = ({ children, href, onClick }) => {
   const content = (
     <motion.button
       onClick={onClick}
-      className="w-full h-16 rounded-lg text-lg font-bold overflow-hidden"
+      className="w-full h-20 rounded-lg text-lg font-bold overflow-hidden"
       style={{
         backgroundColor: "#141414",
         color: "#00ffcc",

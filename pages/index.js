@@ -1,18 +1,14 @@
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Fondo_bienvenida from "../public/img_inicio.jpeg";
-import Fondo_interior_caverna from "../public/img_interior_caberna.jpeg";
+import Fondo_interior_caverna from "../public/img_interior_caverna.jpeg";
 import NeonButton from "@/components/common/NeonButton";
 import SeccionButton from "@/components/common/SeccionButton";
-import MessageButton from "@/components/common/MessageButton";
 import StarAnimation from "@/components/common/StartAnimation"; // Importar el componente
 import { Toaster } from "react-hot-toast";
-import { motion } from "framer-motion";
-
 
 export default function Home() {
   const [showFirst, setShowFirst] = useState(true);
-  const containerRef = useRef(null);
 
   const toggleSection = () => setShowFirst(!showFirst);
 
@@ -21,11 +17,11 @@ export default function Home() {
       {/* Primera Sección */}
       <div
         className={`absolute transition-opacity duration-700 ${
-        showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } relative min-w-full min-h-screen flex flex-row`}
       >
         <StarAnimation />
-  
+
         <Image
           src={Fondo_bienvenida}
           alt="Descripción de la imagen"
@@ -73,37 +69,124 @@ export default function Home() {
           !showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } flex flex-col items-center justify-center w-full  h-screen`}
       >
-        
-        <Image
-          src={Fondo_interior_caverna}
-          alt="Descripción de la imagen"
-          className="relative opacity-25 h-screen z-2"
-        />
-        <div className="flex flex-col absolute w-full h-screen justify-start items-center">
-          <div className="flex justify-center w-screen">
-
-            <div className="m-4 w-1/2">
-              <NeonButton href="https://www.ejemplo.com">Visitar Ejemplo</NeonButton>
-            </div>
-            <div className="m-4 w-1/2">
-              <NeonButton href="https://www.ejemplo.com">Visitar Ejemplo 2</NeonButton>
-            </div>
-          </div>
-          <div>
-            <MessageButton message="¡Bienvenido a la Caverna, aventura te espera!">
-              ¡Haz clic aquí para empezar!
-            </MessageButton>
-          </div>
-          <div>
-            <SeccionButton
-              message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
-              link="https://www.ejemplo.com"
+        <div 
+          className="relative h-screen w-full bg-cover bg-fixed bg-center overflow-y-auto"
+          style={{
+            backgroundImage: `url(${Fondo_interior_caverna.src})`,
+            opacity: 0.5, // Aplicando opacidad solo al fondo
+          }}
+        >
+          <div 
+            className="flex flex-col absolute w-full h-screen justify-start items-center"
+          >
+            <div 
+              className="flex justify-center w-4/5 mt-7"
             >
-              ¡Haz clic para empezar tu aventura!
-            </SeccionButton>
+              <div 
+                className="m-4 w-1/2"
+              >
+                <NeonButton 
+                  href="https://www.ejemplo.com"
+                >
+                  Jugadores
+                </NeonButton>
+              </div>
+
+              <div 
+                className="m-4 w-1/2"
+              >
+                <NeonButton 
+                  href="https://www.ejemplo.com"
+                >
+                  Masters
+                </NeonButton>
+              </div>
+
+            </div>
+
+            <div className="flex w-4/6 h-auto justify-center mt-5 px-4">
+              <div className="flex flex-col m-4 w-full">
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Aprende A Jugar
+                </SeccionButton>
+           
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Descubre Tu Raza
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Descubre hechizos
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+              </div>
+
+              <div className="m-4 w-full">
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 3
+                </SeccionButton>
+              
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+                <SeccionButton
+                  message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
+                  link="https://www.ejemplo.com"
+                >
+                  Sección 4
+                </SeccionButton>
+              </div>
+
+            </div>
           </div>
-          <h1 className="text-4xl text-white font-mono">Segunda Sección</h1>
-          <p className="text-lg text-white font-mono">Esta es la segunda sección visible.</p>
         </div>
       </div>
 
@@ -112,7 +195,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-

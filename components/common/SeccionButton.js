@@ -11,7 +11,7 @@ const SeccionButton = ({ message, link, children }) => {
 
   return (
     <motion.div
-      className="w-full h-24 rounded-lg text-xl font-bold"
+      className="w-full h-72 rounded-lg text-xl font-bold mb-4"
       style={{
         backgroundColor: "#141414",
         color: "#ff007f",
