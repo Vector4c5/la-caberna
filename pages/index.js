@@ -18,35 +18,54 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center relative w-full h-screen bg-black overflow-hidden">
-
       {/* Primera Sección */}
       <div
         className={`absolute transition-opacity duration-700 ${
-          showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        } relative min-w-full min-h-screen flex flex-col items-center justify-center`}
+        showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        } relative min-w-full min-h-screen flex flex-row`}
       >
         <StarAnimation />
+  
         <Image
           src={Fondo_bienvenida}
           alt="Descripción de la imagen"
-          className="relative opacity-25 h-screen z-2"
+          className="absolute opacity-25 h-screen w-full"
         />
-        <button
-        onClick={toggleSection}
-        className="absolute flex flex-col items-center justify-center bg-white rounded-full overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-110"
-        style={{
-          width: "clamp(200px, 25vw, 500px)",
-          aspectRatio: "1",
-        }}
-      >
-          <h1 className="text-center font-extrabold text-black text-6xl font-mono">
+
+        {/* Parte Izquierda */}
+        <div 
+          id="Parte_izq"
+          className="relative flex flex-col justify-end items-start w-1/2 h-screen p-8 z-10"
+        > 
+          <h1 className="text-justify font-extrabold text-white text-9xl font-dm-serif">
             La Caverna
           </h1>
-          <p className="text-center text-black text-xl font-mono">
-            Un mundo de aventuras te espera.
+          <p className="pl-3 pb-8 text-white text-4xl font-dm-serif">
+            ¡¡Un mundo de aventuras te espera!!
           </p>
-      </button>
+        </div>
+
+        {/* Parte Derecha */}
+        <div
+          id="Parte_der"
+          className="relative flex items-start justify-center w-1/2 h-screen z-10"
+        >
+          <button
+            onClick={toggleSection}
+            className="flex items-center justify-center mt-10 border-2 bg-slate-200 border-gray-400 shadow-[0_0_20px_10px_rgba(255,255,255,0.5)] 
+             bg-opacity-50 rounded-full overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-110"
+            style={{
+              width: "clamp(200px, 12vw, 500px)",
+              aspectRatio: "1",
+            }}
+            >
+            <p className="text-xl text-white text-center px-4">
+              Viaja a tu nueva aventura
+            </p>
+          </button>
+        </div> 
       </div>
+
 
       {/* Segunda Sección */}
       <div
@@ -54,15 +73,21 @@ export default function Home() {
           !showFirst ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } flex flex-col items-center justify-center w-full  h-screen`}
       >
+        
         <Image
           src={Fondo_interior_caverna}
           alt="Descripción de la imagen"
           className="relative opacity-25 h-screen z-2"
         />
-        <div className="flex flex-col absolute w-full h-screen justify-center items-center">
+        <div className="flex flex-col absolute w-full h-screen justify-start items-center">
           <div className="flex justify-center w-screen">
-            <NeonButton href="https://www.ejemplo.com">Visitar Ejemplo</NeonButton>
-            <NeonButton href="https://www.ejemplo.com">Visitar Ejemplo</NeonButton>
+
+            <div className="m-4 w-1/2">
+              <NeonButton href="https://www.ejemplo.com">Visitar Ejemplo</NeonButton>
+            </div>
+            <div className="m-4 w-1/2">
+              <NeonButton href="https://www.ejemplo.com">Visitar Ejemplo 2</NeonButton>
+            </div>
           </div>
           <div>
             <MessageButton message="¡Bienvenido a la Caverna, aventura te espera!">

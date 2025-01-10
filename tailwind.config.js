@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'dm-serif': ['"DM Serif Display"', 'serif'], // Fuente personalizada
+      },
     },
   },
   plugins: [],
