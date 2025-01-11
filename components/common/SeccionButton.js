@@ -9,18 +9,11 @@ const SeccionButton = ({ message, link, children }) => {
     }
   };
 
-  return (
-    <motion.div
-      className="w-full h-72 rounded-lg text-xl font-bold mb-4"
-      style={{
-        backgroundColor: "#141414",
-        color: "#ff007f",
-        border: "2px solid #ff007f",
-        boxShadow: "0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f",
-      }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+  const buttonContent = (
+    <motion.button
+      className="w-full h-28 rounded-lg text-xl font-bold m-0
+                 bg-black text-pink-500 border-2 border-pink-500 shadow-lg
+                 transition-transform duration-300 ease-out flex items-center justify-center"
       whileHover={{
         scale: 1.05,
         backgroundColor: "#ff007f",
@@ -28,18 +21,21 @@ const SeccionButton = ({ message, link, children }) => {
         boxShadow: "0 0 20px #ff007f, 0 0 30px #ff007f, 0 0 40px #ff007f",
       }}
       whileTap={{ scale: 0.95 }}
+      onClick={handleClick}
     >
-      {/* Link ahora envuelve directamente el contenido, no es necesario <a> */}
-      <Link href={link} passHref>
-        <div
-          onClick={handleClick}
-          className="w-full h-full flex items-center justify-center cursor-pointer"
-        >
-          {children}
-        </div>
-      </Link>
-    </motion.div>
+      <span className="relative z-10">{children}</span>
+    </motion.button>
   );
+
+  if (link) {
+    return (
+      <Link href={link}>
+        {buttonContent}
+      </Link>
+    );
+  }
+
+  return buttonContent;
 };
 
 export default SeccionButton;

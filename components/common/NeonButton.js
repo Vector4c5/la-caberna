@@ -1,43 +1,30 @@
 import { motion } from "framer-motion";
-import Link from "next/link"; // Importa Link correctamente
+import Link from "next/link";
 
-const NeonButton = ({ children, href, onClick }) => {
-  const content = (
+const CreativeButton = ({ children, href, onClick }) => {
+  const buttonContent = (
     <motion.button
       onClick={onClick}
-      className="w-full h-20 rounded-lg text-lg font-bold overflow-hidden"
-      style={{
-        backgroundColor: "#141414",
-        color: "#00ffcc",
-        border: "2px solid #00ffcc",
-        boxShadow: "0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc",
-      }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{
-        scale: 1.1,
-        backgroundColor: "#00ffcc",
-        color: "#141414",
-        boxShadow: "0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc",
-      }}
-      whileTap={{ scale: 0.95 }}
+      className="relative w-full h-16 px-6 py-2.5 mt-2 rounded-lg 
+                 bg-white text-black shadow-lg font-bold text-xl flex items-center justify-center
+                 transition-transform duration-300 ease-out"
+      whileHover={{ scale: 0.95 }}
     >
-      <span className="w-full h-full flex items-center justify-center">{children}</span>
+      <span className="relative z-10">{children}</span>
     </motion.button>
   );
 
   // Si se pasa href, envolver el contenido con Link
   if (href) {
     return (
-      <Link href={href} passHref> {/* Aquí se elimina el <a> porque Link ya lo maneja */}
-        {content} {/* El contenido ya es un botón que Link manejará como enlace */}
+      <Link href={href} passHref>
+        {buttonContent}
       </Link>
     );
   }
 
   // Si no hay href, simplemente devuelve el contenido como un botón normal
-  return content;
+  return buttonContent;
 };
 
-export default NeonButton;
+export default CreativeButton;
