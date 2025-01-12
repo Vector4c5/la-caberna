@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Link from "next/link"; // Importar Link de Next.js
+import Link from "next/link"; 
 
 const MessageButton = ({ children, link }) => {
   const buttonContent = (

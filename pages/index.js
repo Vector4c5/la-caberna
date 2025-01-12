@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import Fondo_bienvenida from "../public/img_inicio.jpeg";
 import Fondo_interior_caverna from "../public/img_interior_caverna.jpeg";
 import Flecha from "../public/flecha-derecha.png";
+import Header from "@/components/common/Header"
 import NeonButton from "@/components/common/NeonButton";
 import SeccionButton from "@/components/common/SeccionButton";
 import StarAnimation from "@/components/common/StartAnimation";
 import MessageButton from "@/components/common/MessageButton";
+import Link from "next/link"; 
 
 export default function Home() {
   const [showFirst, setShowFirst] = useState(true);
@@ -31,7 +33,6 @@ export default function Home() {
           className="absolute opacity-25 h-screen w-full"
         />
 
-        {/* Parte Izquierda */}
         <div
           id="Parte_izq"
           className="relative flex flex-col justify-center items-center w-full h-screen p-8 z-10"
@@ -73,6 +74,8 @@ export default function Home() {
           alt="Descripción de la imagen"
           className="fixed top-0 left-0 w-full h-full opacity-25 z-0"
         />
+       
+       <Header/>
 
         <div className="relative container flex flex-col items-center w-11/12 h-full z-10 mt-8">
           <div className="flex justify-between items-center w-full h-20 border-t-2 border-b-2 border-white border-solid">
@@ -167,7 +170,7 @@ export default function Home() {
               </div>
             </SeccionButton>
           </div>
-          <div className="flex w-full h-auto m-6 gap-5">
+          <div className="flex w-11/12 h-auto my-6 mx-10 gap-5">
             <MessageButton>
               <div className="h-full w-full flex flex-col justify-between items-center">
                 <img
@@ -233,7 +236,7 @@ export default function Home() {
               Mostrar mas:
             </button>
           </div>
-          <div className="flex w-full h-auto m-4 gap-5">
+          <div className="flex w-11/12 h-auto my-6 mx-10 gap-5">
           <MessageButton>
               <div className="h-full w-full flex flex-col justify-between items-center">
                 <img
