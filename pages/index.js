@@ -2,11 +2,10 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Fondo_bienvenida from "../public/img_inicio.jpeg";
 import Fondo_interior_caverna from "../public/img_interior_caverna.jpeg";
+import Flecha from "../public/flecha-derecha.png";
 import NeonButton from "@/components/common/NeonButton";
 import SeccionButton from "@/components/common/SeccionButton";
-import StarAnimation from "@/components/common/StartAnimation"; 
-import { Toaster } from "react-hot-toast";
-import { motion } from "framer-motion";
+import StarAnimation from "@/components/common/StartAnimation";
 import MessageButton from "@/components/common/MessageButton";
 
 export default function Home() {
@@ -98,31 +97,89 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col w-10/12 mt-8 mb-8 gap-4">
-            <SeccionButton
-              message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
-              link="https://www.ejemplo.com"
-            >
-              Descubre Tu Raza
+            <SeccionButton link="https://www.ejemplo.com">
+              <div className="flex w-full h-full justify-between items-center m-0 p-0 text-white">
+                <div className="flex flex-col h-full w-full justify-end">
+                  <h2 className="text-start text-4xl font-serif mn-2">
+                    Crea tu personaje
+                  </h2>
+                  <p className="text-start">
+                    Utiliza nuestras guías y crea tu próximo personaje
+                  </p>
+                </div>
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-16 w-16 mr-0"
+                />
+              </div>
             </SeccionButton>
-            <SeccionButton
-              message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
-              link="https://www.ejemplo.com"
-            >
-              Descubre Tu Raza
+
+            <SeccionButton link="https://www.ejemplo.com">
+              <div className="flex w-full h-full justify-between items-center m-0 p-0">
+                <div className="flex flex-col h-full w-full justify-end">
+                  <h2 className="text-start text-4xl font-serif mn-2 text-white">
+                    Crea tu personaje
+                  </h2>
+                  <p className="text-white text-start">
+                    Utiliza nuestras guías y crea tu próximo personaje
+                  </p>
+                </div>
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-16 w-16 mr-0"
+                />
+              </div>
             </SeccionButton>
-            <SeccionButton
-              message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
-              link="https://www.ejemplo.com"
-            >
-              Descubre Tu Raza
+            <SeccionButton link="https://www.ejemplo.com">
+              <div className="flex w-full h-full justify-between items-center m-0 p-0">
+                <div className="flex flex-col h-full w-full justify-end">
+                  <h2 className="text-start text-4xl font-serif mn-2 text-white">
+                    Crea tu personaje
+                  </h2>
+                  <p className="text-white text-start">
+                    Utiliza nuestras guías y crea tu próximo personaje
+                  </p>
+                </div>
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-16 w-16 mr-0"
+                />
+              </div>
             </SeccionButton>
-            <SeccionButton
-              message="¡Bienvenido a la caverna! Estás a punto de embarcarte en una gran aventura."
-              link="https://www.ejemplo.com"
-            >
-              Descubre Tu Raza
+            <SeccionButton link="https://www.ejemplo.com">
+              <div className="flex w-full h-full justify-between items-center m-0 p-0">
+                <div className="flex flex-col h-full w-full justify-end">
+                  <h2 className="text-start text-4xl font-serif mn-2 text-white">
+                    Crea tu personaje
+                  </h2>
+                  <p className="text-white text-start">
+                    Utiliza nuestras guías y crea tu próximo personaje
+                  </p>
+                </div>
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-16 w-16 mr-0"
+                />
+              </div>
             </SeccionButton>
-            
+          </div>
+          <div className="flex w-full h-auto m-4 gap-4">
+            <MessageButton>Hola mundo</MessageButton>
+
+            <MessageButton></MessageButton>
+
+            <MessageButton></MessageButton>
+
+            <MessageButton></MessageButton>
+          </div>
+          <div className="w-full flex flex-row-reverse">
+            <button className="text-2xl border-b-2 border-white mb-5">
+              Mostrar mas:
+            </button>
           </div>
           <div className="flex w-full h-auto m-4 gap-4">
             <MessageButton></MessageButton>
@@ -132,31 +189,14 @@ export default function Home() {
             <MessageButton></MessageButton>
 
             <MessageButton></MessageButton>
-
           </div>
           <div className="w-full flex flex-row-reverse">
-            <button className="text-2xl border-b-2 border-white mb-5">Mostrar mas:</button>
-
-          </div>
-          <div className="flex w-full h-auto m-4 gap-4">
-            <MessageButton></MessageButton>
-
-            <MessageButton></MessageButton>
-
-            <MessageButton></MessageButton>
-
-            <MessageButton></MessageButton>
-
-          </div>
-          <div className="w-full flex flex-row-reverse">
-            <button className="text-2xl border-b-2 border-white mb-5">Mostrar mas:</button>
-
+            <button className="text-2xl border-b-2 border-white mb-5">
+              Mostrar mas:
+            </button>
           </div>
         </div>
       </div>
-
-      {/* Toaster para mostrar los mensajes */}
-      <Toaster position="top-center" />
     </div>
   );
 }
