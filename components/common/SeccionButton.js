@@ -6,10 +6,10 @@ const SeccionButton = ({ link, children }) => {
     <motion.button
       className="w-full h-36 rounded-lg text-xl p-5 m-0 bg-black bg-opacity-80
                  border-4 border-emerald-500 shadow-md shadow-slate-300
-                 transition-transform duration-300 ease-out items-end justify-between"
+                 transition-transform duration-500 ease-out items-end justify-between"
       
       whileHover={{
-        scale: 1.1,
+        scale: 1.05,
         backgroundColor: "#212026",
         boxShadow: "0 0 15px #F2F2F2, 0 0 15px #F2F2F2, 0 0 40px #F2F2F2",
         

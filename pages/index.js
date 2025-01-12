@@ -167,28 +167,132 @@ export default function Home() {
               </div>
             </SeccionButton>
           </div>
-          <div className="flex w-full h-auto m-4 gap-4">
-            <MessageButton>Hola mundo</MessageButton>
+          <div className="flex w-full h-auto m-6 gap-5">
+            <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
 
-            <MessageButton></MessageButton>
+            <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
 
-            <MessageButton></MessageButton>
+            <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
 
-            <MessageButton></MessageButton>
+            <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
           </div>
           <div className="w-full flex flex-row-reverse">
             <button className="text-2xl border-b-2 border-white mb-5">
               Mostrar mas:
             </button>
           </div>
-          <div className="flex w-full h-auto m-4 gap-4">
-            <MessageButton></MessageButton>
+          <div className="flex w-full h-auto m-4 gap-5">
+          <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
 
-            <MessageButton></MessageButton>
+            <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
 
-            <MessageButton></MessageButton>
+            <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
 
-            <MessageButton></MessageButton>
+            <MessageButton>
+              <div className="h-full w-full flex flex-col justify-between items-center">
+                <img
+                  src={Flecha.src}
+                  alt="Descripción de la imagen"
+                  className="opacity-80 h-2/3 w-full mr-0"
+                />
+                <div className="h-1/3 w-full border-t-4 border-purple-900">
+                  <p className="text-2xl text-start p-4">
+                    Aquin ira un titulo
+                  </p>
+                </div>
+              </div>
+            </MessageButton>
           </div>
           <div className="w-full flex flex-row-reverse">
             <button className="text-2xl border-b-2 border-white mb-5">
