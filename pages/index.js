@@ -72,18 +72,14 @@ export default function Home() {
         <img
           src={Fondo_interior_caverna.src}
           alt="Descripción de la imagen"
-          className="fixed top-0 left-0 w-full h-full opacity-25 z-0"
+          className="fixed top-0 left-0 w-full h-full opacity-15 z-0"
         />
        
-       <Header/>
+      
 
-        <div className="relative container flex flex-col items-center w-11/12 h-full z-10 mt-8">
-          <div className="flex justify-between items-center w-full h-20 border-t-2 border-b-2 border-white border-solid">
-            <h1 className="text-5xl font-serif m-2">La Caverna</h1>
-            <div className="bg-white rounded-full text-black px-4 py-2">
-              Usuario
-            </div>
-          </div>
+        <div className="relative container flex flex-col items-center w-11/12 h-full z-10 mt-8 ">
+        <Header/>
+
 
           <div className="flex flex-col items-start w-full h-auto mt-6">
             <h2 className="text-5xl text-white text-shadow-lg shadow-purple-100 mb-4">
@@ -94,10 +90,10 @@ export default function Home() {
             </h3>
           </div>
 
-          <div className="flex w-full justify-center gap-4">
+          {/* <div className="flex w-full justify-center gap-4">
             <NeonButton>Jugadores</NeonButton>
             <NeonButton>Masters</NeonButton>
-          </div>
+          </div> */}
 
           <div className="flex flex-col w-10/12 mt-8 mb-8 gap-4">
             <SeccionButton link="https://www.ejemplo.com">
