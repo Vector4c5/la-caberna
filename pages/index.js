@@ -44,6 +44,7 @@ export default function Home() {
             ¡¡Un mundo de aventuras te espera!!
           </p>
 
+
           <button
             className="w-2/6 h-12 px5 py2.5 mt-2 relative rounded group overflow-hidden font-medium
               bg-black bg-opacity-30 text-white border-8 border-double border-teal-500 inline-block transition-all duration-500 shadow-lg shadow-teal-300
