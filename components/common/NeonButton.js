@@ -5,12 +5,16 @@ const CreativeButton = ({ children, href, onClick }) => {
   const buttonContent = (
     <motion.button
       onClick={onClick}
-      className="relative w-full h-16 px-6 py-2.5 mt-2 rounded-lg 
-                 bg-white text-black shadow-lg font-bold text-xl flex items-center justify-center
-                 transition-transform duration-300 ease-out"
-      whileHover={{ scale: 0.95 }}
+      className="w-5/12 h-16 px5 py2.5 mt-2 relative rounded group overflow-hidden
+              bg-slate-800 bg-opacity-25 border-8 border-double border-teal-500 inline-block 
+              transition-all duration-500 shadow-lg shadow-teal-300 ease-out transform hover:bg-teal-300
+              hover:bg-opacity-25"
+      whileHover={{ scale: 1.1 }}
     >
-      <span className="relative z-10">{children}</span>
+
+      <span className="relative group-hover:text-white font-mono text-2xl">
+        {children}
+      </span>
     </motion.button>
   );
 

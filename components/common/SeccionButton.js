@@ -1,28 +1,22 @@
-import { motion } from "framer-motion";
-import toast from "react-hot-toast"; // Importar toast desde react-hot-toast
+import { color, motion } from "framer-motion";
 import Link from "next/link"; // Importar Link de Next.js
 
-const SeccionButton = ({ message, link, children }) => {
-  const handleClick = () => {
-    if (message) {
-      toast.success(message); // Muestra un toast con el mensaje
-    }
-  };
-
+const SeccionButton = ({ link, children }) => {
   const buttonContent = (
     <motion.button
-      className="w-full h-28 rounded-lg text-xl font-bold m-0
-                 bg-black text-pink-500 border-2 border-pink-500 shadow-lg
-                 transition-transform duration-300 ease-out flex items-center justify-center"
+      className="w-full h-36 rounded-lg text-xl p-5 m-0 bg-black bg-opacity-80
+                 border-4 border-emerald-500 shadow-md shadow-slate-300
+                 transition-transform duration-500 ease-out items-end justify-between"
+      
       whileHover={{
         scale: 1.05,
-        backgroundColor: "#ff007f",
-        color: "#141414",
-        boxShadow: "0 0 20px #ff007f, 0 0 30px #ff007f, 0 0 40px #ff007f",
+        backgroundColor: "#212026",
+        boxShadow: "0 0 15px #F2F2F2, 0 0 15px #F2F2F2, 0 0 40px #F2F2F2",
+        
       }}
       whileTap={{ scale: 0.95 }}
-      onClick={handleClick}
     >
+      
       <span className="relative z-10">{children}</span>
     </motion.button>
   );
