@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const BookPreview = ({ title, image, description, link = '#' }) => {
   return (
-    <Link href={link} className="block">
+    <Link href={link} className="flex justify-center">
       <div className="relative w-[300px] h-[400px] group cursor-pointer transform transition-transform duration-300 hover:scale-105">
         {/* Imagen de fondo que abarca todo */}
         <div 
@@ -20,21 +20,23 @@ const BookPreview = ({ title, image, description, link = '#' }) => {
           group-hover:w-full overflow-hidden"
         >
           {/* Contenido del libro */}
-          <div className="relative z-10 h-full flex flex-col justify-end p-6">
+          <div className="relative z-10 h-full flex flex-col justify-between p-6">
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-2 font-['Press_Start_2P']">
+              <h3 className="text-2xl text-center font-bold text-white mb-2 font-['Press_Start_2P']">
                 {title}
               </h3>
-              <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+            <p className="text-black text-sm text-center font-['Press_Start_2P'] p-2 opacity-0 group-hover:opacity-100 
+            bg-white bg-opacity-0 group-hover:bg-opacity-80 rounded-xl transition-opacity 
+              duration-300">
                 {description}
               </p>
-            </div>
           </div>
         </div>
 
         {/* Efecto de reflejo/sombra */}
         <div 
-          className="absolute right-0 top-0 w-[25%] h-full bg-gradient-to-l 
+          className="absolute right-0 top-0 w-1/4 h-full bg-gradient-to-l 
           from-white/20 to-transparent transition-all duration-500 
           group-hover:opacity-0"
         />
