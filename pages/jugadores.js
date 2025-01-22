@@ -1,6 +1,7 @@
 import Header from "@/components/common/Header";
 import BookPreview from "@/components/common/BookPreview";
-import img_interior_caverna from "../public/img_interior_caverna.jpeg";
+import img_interior_caverna from "../public/Portada_clases.jpeg";
+
 
 export default function jugadores() {
   const books = [
@@ -8,8 +9,8 @@ export default function jugadores() {
       id: 1,
       title: "Clases",
       image: img_interior_caverna.src,
-      description: "Descubre tu clase y vive una aventura unica con tus habilidades.",
-      link: "/personaje",
+      description: "Descubre tu clase y vive una aventura unica.",
+      link: "/j_clases",
     },
     {
       id: 2,
@@ -49,6 +50,7 @@ export default function jugadores() {
 
   return (
     <div className="flex flex-col items-center w-full h-full bg-black p-10 px-32">
+      
       <div
         className="container flex flex-col items-center gap-3 w-full h-auto border-solid border-white border-b-2 border-t-2 p-5 
         animate-fade-in-down"
@@ -78,6 +80,7 @@ export default function jugadores() {
           </div>
         ))}
       </div>
+      
     </div>
   );
 }
