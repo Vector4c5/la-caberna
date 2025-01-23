@@ -74,7 +74,8 @@ export default function Clases() {
               transform translate-y-full group-hover:translate-y-0">
                 <span className="w-full h-full absolute opacity-90"></span>
                 <p
-                  className="relative bg-white bg-opacity-80 rounded-lg m-6 p-4 text-center text-sm text-black font-['Press_Start_2P']"
+                  className="relative bg-white bg-opacity-80 rounded-lg m-6 p-4 
+                  text-center text-sm text-black font-['Press_Start_2P']"
                 >
                   {classItem.description}
                 </p>

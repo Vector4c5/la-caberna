@@ -10,14 +10,14 @@ export default function jugadores() {
       title: "Clases",
       image: img_interior_caverna.src,
       description: "Descubre tu clase y vive una aventura unica.",
-      link: "/j_clases",
+      link: "/clases/j_clases",
     },
     {
       id: 2,
       title: "Raza",
       image: "/placeholder-book.jpg",
       description: "¿Te apetece seguir siendo humano? ¿no? Entonces ven y descubre tu verdadera naturaleza.",
-      link: "/hechizos",
+      link: "/razas/j_razas",
     },
     {
       id: 3,
