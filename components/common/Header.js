@@ -10,8 +10,8 @@ const navLinks = [
 
 export default function Header() {
   return (
-    <nav className="w-full h-full text-2xl text-white py-2 px-0 container flex justify-between items-center
-          border-t-2 border-b-2 border-white border-solid">
+    <nav className="w-full h-full mb-8 text-2xl text-white py-2 px-0 container flex justify-between items-center
+          border-t-2 border-b-2 border-white border-solid z-40">
             <h1 className="text-5xl font-serif m-5">
               La Caverna
             </h1>

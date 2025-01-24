@@ -45,6 +45,7 @@ export default function ClaseDetalle() {
   return (
     <>
       <div className="container mx-auto px-4 py-8">
+     
         <h1
           className="text-4xl mb-6 text-center"
           style={{ fontFamily: "'Press Start 2P', cursive" }}

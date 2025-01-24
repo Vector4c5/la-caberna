@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import BookPreview from "@/components/common/BookPreview";
+import Header from "@/components/common/Header"
+
 
 export default function Clases() {
   const router = useRouter();
@@ -31,9 +32,15 @@ export default function Clases() {
   };
 
   return (
-    <div className="flex flex-col w-full h-full bg-black p-10 px-32">
+    <div className="flex flex-col items-center w-full h-full bg-black p-10 px-32">
+      <Header/>
+      <img
+        src="/Fondo_Biblioteca.jpeg"
+        alt="Fondo bienvenida"
+        className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
+      />
       <div
-        className="container flex flex-col items-center gap-3 w-full h-auto border-solid border-white border-b-2 border-t-2 p-5 
+        className="container flex flex-col  items-center gap-3 w-10/12 h-auto border-solid border-white border-b-2 border-t-2 p-5 
         animate-fade-in-down"
         style={{
           boxShadow:
@@ -41,8 +48,8 @@ export default function Clases() {
           fontFamily: "'Press Start 2P', cursive",
         }}
       >
-        <h1 className="text-center text-5xl w-full text-white">Clases D&D</h1>
-        <h2 className="text-2xl text-center text-cyan-400">Elige tu destino</h2>
+        <h1 className="text-center text-4xl w-full text-white">Clases D&D</h1>
+        <h2 className="text-xl text-center text-cyan-400">Elige tu destino</h2>
       </div>
 
       {/* Grid de clases */}
@@ -50,13 +57,12 @@ export default function Clases() {
         {classes.map((classItem, index) => (
           <div
             key={classItem.id}
-            className="animate-fade-in-up flex justify-center"
-            style={{ animationDelay: `${index * 200}ms` }}
+            className="flex justify-center"
           >
             <button
               onClick={() => handleClaseClick(classItem.link.split("/").pop())}
               className="w-full h-32 px5 py2.5 mt-2 relative group overflow-hidden font-medium
-              bg-slate-700 bg-opacity-30 text-white inline-block transition-all duration-500
+              bg-slate-700 bg-opacity-70 text-white inline-block transition-all duration-500
               rounded-lg shadow-md shadow-white
               ease-out transform hover:scale-105"
             >
