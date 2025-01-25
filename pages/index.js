@@ -47,8 +47,10 @@ export default function Home() {
               ease-out transform hover:scale-95"
             onClick={toggleSection}
           >
-            <span className="absolute bottom-0 left-0 h-0 w-full transition-all duration-700
-                ease-out transform translate-x-0 bg-teal-400 group-hover:h-full opacity-90"></span>
+            <span
+              className="absolute bottom-0 left-0 h-0 w-full transition-all duration-700
+                ease-out transform translate-x-0 bg-teal-400 group-hover:h-full opacity-90"
+            ></span>
             <span className="relative group-hover:text-black font-mono text-2xl">
               ¡Inicia tu aventura!
             </span>
@@ -71,15 +73,25 @@ export default function Home() {
         />
 
         <div className="relative container flex flex-col items-center w-11/12 h-full z-10 mt-8 ">
-          <Header />
+          <div className="w-full h-28">
+            <Header />
+          </div>
 
-          <div className="flex flex-col items-start w-full h-auto mt-6">
-            <h2 className="text-5xl text-white text-shadow-lg shadow-purple-100 mb-4">
+          <div className="flex flex-col items-center w-full h-auto mt-6">
+            <h2 className="text-3xl text-center w-full text-white text-shadow-lg shadow-purple-100 font-['Press_Start_2P']
+            bg-black bg-opacity-40 rounded-2xl p-5">
               ¡Bienvenido a la caverna!
             </h2>
-            <h3 className="text-2xl text-white text-shadow-lg shadow-purple-100 mb-8">
-              Ven, y prepárate para tu próxima aventura
-            </h3>
+            <p className="text-center text-xl mb-5 p-5 font-['Press_Start_2P'] 
+            bg-black bg-opacity-40 rounded-2xl">
+              Si eres un aventurero novato o un Dungeon Master en busca de
+              recursos, has llegado al lugar correcto. En **La Caverna**,
+              encontrarás guías, herramientas y consejos para comenzar tu viaje
+              en Dungeons & Dragons. Desde reglas básicas hasta ideas para
+              crear tu propia campaña, aquí tienes todo lo necesario para
+              adentrarte en el mundo del rol. ¡Toma tu dado, reúne a tu grupo y
+              prepárate para la aventura!
+            </p>
           </div>
 
           {/* <div className="flex w-full justify-center gap-4">
@@ -87,192 +99,40 @@ export default function Home() {
             <NeonButton>Masters</NeonButton>
           </div> */}
 
-          <div className="flex flex-col w-10/12 mt-8 mb-8 gap-4">
-            <SeccionButton link="/personaje">
-              <div className="flex w-full h-full justify-between items-center m-0 p-0 text-white">
-                <div className="flex flex-col h-full w-full justify-end">
-                  <h2 className="text-start text-4xl font-serif mn-2">
-                    Crea tu personaje
-                  </h2>
-                  <p className="text-start">
-                    Utiliza nuestras guías y crea tu próximo personaje
-                  </p>
-                </div>
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-16 w-16 mr-0"
-                />
+          <div className="flex justify-center gap-7 w-8/12 h-auto pb-10">
+            <Link
+              className="group relative container row-span-2 w-full h-144 bg-orange-950 bg-opacity-55 border-amber-800 border-4
+            border-solid hover:scale-105 transition-all ease-out duration-700"
+              href="/jugadores"
+            >
+              <div
+                className="absolute w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-100"
+                style={{
+                  backgroundImage: `url(/Escudo_espada.jpeg)`,
+                }}
+              />
+              <div className="relative h-full w-full flex justify-center items-end z-50">
+                <h3 className="text-3xl font-['Press_Start_2P']">jugadores</h3>
               </div>
-            </SeccionButton>
+            </Link>
 
-            <SeccionButton link="https://www.ejemplo.com">
-              <div className="flex w-full h-full justify-between items-center m-0 p-0">
-                <div className="flex flex-col h-full w-full justify-end">
-                  <h2 className="text-start text-4xl font-serif mn-2 text-white">
-                    Crea tu personaje
-                  </h2>
-                  <p className="text-white text-start">
-                    Utiliza nuestras guías y crea tu próximo personaje
-                  </p>
-                </div>
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-16 w-16 mr-0"
-                />
+            <Link
+              className="group relative w-full h-144 bg-green-950 bg-opacity-55 
+            border-emerald-700 border-4 border-solid
+            hover:scale-105 transition-all ease-out duration-700"
+              href="/masters"
+            >
+              <div
+                className="absolute w-full h-full bg-cover bg-center opacity-60 transition-all
+                group-hover:opacity-100"
+                style={{
+                  backgroundImage: `url(/Mago.jpeg)`,
+                }}
+              />
+              <div className="relative h-full w-full flex justify-center items-end z-50">
+                <h3 className="text-3xl font-['Press_Start_2P']">Masters</h3>
               </div>
-            </SeccionButton>
-            <SeccionButton link="https://www.ejemplo.com">
-              <div className="flex w-full h-full justify-between items-center m-0 p-0">
-                <div className="flex flex-col h-full w-full justify-end">
-                  <h2 className="text-start text-4xl font-serif mn-2 text-white">
-                    Crea tu personaje
-                  </h2>
-                  <p className="text-white text-start">
-                    Utiliza nuestras guías y crea tu próximo personaje
-                  </p>
-                </div>
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-16 w-16 mr-0"
-                />
-              </div>
-            </SeccionButton>
-            <SeccionButton link="https://www.ejemplo.com">
-              <div className="flex w-full h-full justify-between items-center m-0 p-0">
-                <div className="flex flex-col h-full w-full justify-end">
-                  <h2 className="text-start text-4xl font-serif mn-2 text-white">
-                    Crea tu personaje
-                  </h2>
-                  <p className="text-white text-start">
-                    Utiliza nuestras guías y crea tu próximo personaje
-                  </p>
-                </div>
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-16 w-16 mr-0"
-                />
-              </div>
-            </SeccionButton>
-          </div>
-          <div className="flex w-11/12 h-auto my-6 mx-10 gap-5">
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-          </div>
-          <div className="w-full flex flex-row-reverse">
-            <button className="text-2xl border-b-2 border-white mb-5">
-              Mostrar mas:
-            </button>
-          </div>
-          <div className="flex w-11/12 h-auto my-6 mx-10 gap-5">
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-
-            <MessageButton>
-              <div className="h-full w-full flex flex-col justify-between items-center">
-                <img
-                  src={Flecha.src}
-                  alt="Descripción de la imagen"
-                  className="opacity-80 h-2/3 w-full mr-0"
-                />
-                <div className="h-1/3 w-full border-t-4 border-purple-900">
-                  <p className="text-2xl text-start p-4">Aquin ira un titulo</p>
-                </div>
-              </div>
-            </MessageButton>
-          </div>
-          <div className="w-full flex flex-row-reverse">
-            <button className="text-2xl border-b-2 border-white mb-5">
-              Mostrar mas:
-            </button>
+            </Link>
           </div>
         </div>
       </div>

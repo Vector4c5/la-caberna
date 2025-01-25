@@ -10,7 +10,7 @@ const BookPreview = ({ title, image, description, link = '#' }) => {
           className="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-700 opacity-100"
           style={{ backgroundImage: `url(${image || '/placeholder-book.jpg'})` }}
         />
-        
+         
         {/* Overlay oscuro que se aclara en hover */}
         <div className="absolute inset-0 bg-black/40 transition-opacity duration-500 group-hover:opacity-0" />
 
