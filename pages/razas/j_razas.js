@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import BookPreview from "@/components/common/BookPreview";
+import Header from "@/components/common/Header";
 
 export default function Clases() {
   const router = useRouter();
@@ -9,13 +9,13 @@ export default function Clases() {
   useEffect(() => {
     const fetchClasses = async () => {
       try {
-        const response = await fetch("https://www.dnd5eapi.co/api/classes");
+        const response = await fetch("https://www.dnd5eapi.co/api/races");
         const data = await response.json();
         const formattedClasses = data.results.map((classItem, index) => ({
           id: index + 1,
           title: classItem.name,
-          description: `Descubre los secretos y habilidades de la clase ${classItem.name}`,
-          link: `/clases/${classItem.index}`,
+          description: `Descubre los secretos y habilidades de la raza ${classItem.name}`,
+          link: `/razas/${classItem.index}`,
         }));
         setClasses(formattedClasses);
       } catch (error) {
@@ -27,11 +27,17 @@ export default function Clases() {
   }, []);
 
   const handleClaseClick = (index) => {
-    router.push(`/clases/${index}`);
+    router.push(`/razas/${index}`);
   };
 
   return (
     <div className="flex flex-col w-full h-full bg-black p-10 px-32">
+      <Header />
+      <img
+        src="/Fondo_Biblioteca.jpeg"
+        alt="Fondo bienvenida"
+        className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
+      />
       <div
         className="container flex flex-col items-center gap-3 w-full h-auto border-solid border-white border-b-2 border-t-2 p-5 
         animate-fade-in-down"
@@ -41,8 +47,8 @@ export default function Clases() {
           fontFamily: "'Press Start 2P', cursive",
         }}
       >
-        <h1 className="text-center text-5xl w-full text-white">Clases D&D</h1>
-        <h2 className="text-2xl text-center text-cyan-400">Elige tu destino</h2>
+        <h1 className="text-center text-5xl w-full text-white">Razas D&D</h1>
+        <h2 className="text-2xl text-center text-cyan-400">Elige tu historia</h2>
       </div>
 
       {/* Grid de clases */}
@@ -50,13 +56,12 @@ export default function Clases() {
         {classes.map((classItem, index) => (
           <div
             key={classItem.id}
-            className="animate-fade-in-up flex justify-center"
-            style={{ animationDelay: `${index * 200}ms` }}
+            className=" flex justify-center"
           >
             <button
               onClick={() => handleClaseClick(classItem.link.split("/").pop())}
               className="w-full h-32 px5 py2.5 mt-2 relative group overflow-hidden font-medium
-              bg-slate-700 bg-opacity-30 text-white inline-block transition-all duration-500
+              bg-slate-700 bg-opacity-70 text-white inline-block transition-all duration-500
               rounded-lg shadow-md shadow-white
               ease-out transform hover:scale-105"
             >
@@ -70,11 +75,14 @@ export default function Clases() {
                   {classItem.title}
                 </h3>
               </div>
-              <div className="absolute inset-0 flex flex-col justify-center items-center transition-all duration-500 
-              transform translate-y-full group-hover:translate-y-0">
+              <div
+                className="absolute inset-0 flex flex-col justify-center items-center transition-all duration-500 
+              transform translate-y-full group-hover:translate-y-0"
+              >
                 <span className="w-full h-full absolute opacity-90"></span>
                 <p
-                  className="relative bg-white bg-opacity-80 rounded-lg m-6 p-4 text-center text-sm text-black font-['Press_Start_2P']"
+                  className="relative bg-white bg-opacity-80 rounded-lg m-6 p-4 
+                  text-center text-sm text-black font-['Press_Start_2P']"
                 >
                   {classItem.description}
                 </p>

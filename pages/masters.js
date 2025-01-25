@@ -6,15 +6,15 @@ export default function jugadores() {
   const books = [
     {
       id: 1,
-      title: "Clases",
-      image: "/Portada_clases.jpeg",
-      description: "Descubre tu clase y vive una aventura unica.",
-      link: "/clases/j_clases",
+      title: "Monstruos",
+      image: "/Portada_monstruos.jpeg",
+      description: "Elije tus monstruos y has sufrir a tus jugadores",
+      link: "/",
     },
     {
       id: 2,
       title: "Raza",
-      image: "/Potada_razas.jpeg",
+      image: "/",
       description: "¿Te apetece seguir siendo humano? ¿no? Entonces ven y descubre tu verdadera naturaleza.",
       link: "/razas/j_razas",
     },
@@ -63,7 +63,7 @@ export default function jugadores() {
           fontFamily: "'Press Start 2P', cursive"
         }}
       >
-        <h1 className="text-center text-4xl w-full text-white">Welcome Player</h1>
+        <h1 className="text-center text-4xl w-full text-white">Welcome Master</h1>
         <h2 className="text-xl text-center text-cyan-400">Take a look at our collection.</h2>
       </div>
 
