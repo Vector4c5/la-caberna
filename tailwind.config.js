@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        '128': '32rem',  // nueva clase h-128
+        '144': '36rem',  // nueva clase h-144
+        '284': '72rem',
+        // Puedes agregar más clases personalizadas aquí
+      },
       colors: {
         'book-yellow': '#ffce14',
         'book-bg': '#1a1a1a',
