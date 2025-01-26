@@ -20,9 +20,10 @@ export default function jugadores() {
     },
     {
       id: 3,
-      title: "Trasfondos",
+      title: "Hechizos",
       image: "/placeholder-book.jpg",
-      description: "Crea tu propia historia y cuenta tus grandes hazañas."
+      description: "Descubre todos los hechizos disponibles para tu aventura..",
+      link: "/hechizos/hechizos",
     },
     {
       id: 4,
