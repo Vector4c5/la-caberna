@@ -25,16 +25,22 @@ export default function MonstersDetalles() {
             );
 
             if (spellcasting) {
-              const spellSlugs = spellcasting.spellcasting.spells.map(spell => spell.url.split("/").pop());
-              
-              const spellRequests = spellSlugs.map(slug => axios.get(`https://www.dnd5eapi.co/api/spells/${slug}`));
-              
+              const spellSlugs = spellcasting.spellcasting.spells.map((spell) =>
+                spell.url.split("/").pop()
+              );
+
+              const spellRequests = spellSlugs.map((slug) =>
+                axios.get(`https://www.dnd5eapi.co/api/spells/${slug}`)
+              );
+
               try {
                 const spellResponses = await Promise.all(spellRequests);
-                const spellDetails = spellResponses.map(res => ({
+                const spellDetails = spellResponses.map((res) => ({
                   name: res.data.name,
                   full_name: res.data.full_name || res.data.name,
-                  desc: res.data.desc ? res.data.desc.join(" ") : "No description available"
+                  desc: res.data.desc
+                    ? res.data.desc.join(" ")
+                    : "No description available",
                 }));
                 setSpells(spellDetails);
               } catch (spellError) {
@@ -70,7 +76,7 @@ export default function MonstersDetalles() {
   }
 
   return (
-    <div className="flex flex-col items-center w-full h-wull p-10 gap-5">
+    <div className="flex flex-col items-center w-full h-full p-10 gap-5">
       <img
         src="/Fondo_Biblioteca.jpeg"
         alt="Fondo bienvenida"
@@ -80,51 +86,82 @@ export default function MonstersDetalles() {
         {monster.name}
       </h1>
 
-      <div className="container flex w-10/12 h-auto gap-4">
-        <div className="container flex flex-col p-6 w-1/2 h-auto text-justify bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
-          <h2 className="text-2xl text-center font-['Press_Start_2P']">
-            Description:
-          </h2>
-          <p>{monster.desc}</p>
-          {monster.special_abilities.map((ability) => (
-            <div key={ability.name}>
-              <h3 className="text-xl font-['Press_Start_2P']">{ability.name}</h3>
-              <p>{ability.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="container flex flex-col p-6 w-1/2 h-auto bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
-          <h2 className="text-2xl text-center font-['Press_Start_2P']">
+      <div
+        className="p-6 w-10/12 h-auto text-justify bg-gray-800 bg-opacity-85 rounded-xl gap-4 z-20
+      border-2 border-blue-300"
+      >
+        <p className="col-span-2 text-center text-xl">{monster.desc}</p>
+        <div className="container grid grid-cols-2 gap-4 my-5">
+          <h2 className="col-span-2 text-2xl text-justify font-['Press_Start_2P']">
             Characteristics:
           </h2>
-          <p className="">Size: {monster.size}</p>
-          {spells.length > 0 && (
-            <div>
-              <h3 className="text-xl font-['Press_Start_2P']">Spells:</h3>
-              {spells.map(spell => (
-                <div key={spell.name}>
-                  <h4 className="text-lg font-bold">{spell.full_name}</h4>
-                  <p>{spell.desc}</p>
-                </div>
-              ))}
-            </div>
-          )}
+          <p className="text-justify text-xl">
+            <strong>Size:</strong> {monster.size}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Hit points:</strong> {monster.hit_points}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Hit dice:</strong> {monster.hit_dice}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Hit points roll:</strong> {monster.hit_points_roll}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Speed:</strong> {monster.speed.walk}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Strength:</strong> {monster.strength}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Constitution:</strong> {monster.constitution}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Intelligence:</strong> {monster.intelligence}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Wisdom:</strong> {monster.wisdom}
+          </p>
+          <p className="text-justify text-xl">
+            <strong>Charisma:</strong> {monster.charisma}
+          </p>
         </div>
-      </div>
 
-      <div className="container flex w-10/12 h-auto gap-4 mt-4">
-        <div className="container flex flex-col p-6 w-full h-auto bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
-          <h2 className="text-2xl text-center font-['Press_Start_2P']">
-            Actions:
-          </h2>
-          {monster.actions.map((action) => (
-            <div key={action.name}>
-              <h3 className="text-xl font-['Press_Start_2P']">{action.name}</h3>
-              <p>{action.desc}</p>
-            </div>
+        {spells.length > 0 && (
+          <div className="col-span-2">
+            <h3 className="text-2xl my-2 font-['Press_Start_2P']">Spells:</h3>
+            <ul className="list-disc pl-5">
+              {spells.map((spell) => (
+                <li key={spell.name} className="text-justify text-xl">
+                  <strong>{spell.full_name}:</strong>
+                  <p className="m-2">{spell.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className="container my-4">
+        <h2 className="col-span-2 text-2xl text-justify font-['Press_Start_2P']">
+          Special Abilities and Actions:
+        </h2>
+        <ul className="list-disc pl-5">
+          {monster.special_abilities.map((ability) => (
+            <li key={ability.name} className="my-4">
+              <strong className="text-lg ">{ability.name}</strong>
+              <p>{ability.desc}</p>
+            </li>
           ))}
+        </ul>
+        <ul className="list-disc pl-5">
+          {monster.actions.map((action) => (
+            <li key={action.name} className="my-4">
+              <strong className="text-xl">{action.name}</strong>
+              <p>{action.desc}</p>
+            </li>
+          ))}
+        </ul>
         </div>
+
       </div>
     </div>
   );

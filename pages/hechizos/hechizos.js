@@ -51,7 +51,7 @@ export default function Hechizos() {
                 <h2 className="text-xl text-center text-cyan-400">Elige tus habilidades</h2>
             </div>
 
-            {/* Grid de clases */}
+           
             <div className="grid grid-cols-3 gap-8 mt-12 w-full">
                 {classes.map((classItem) => (
                     <div key={classItem.id} className="flex justify-center">

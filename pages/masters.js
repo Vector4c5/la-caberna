@@ -16,7 +16,7 @@ export default function jugadores() {
       title: "Raza",
       image: "/",
       description: "¿Te apetece seguir siendo humano? ¿no? Entonces ven y descubre tu verdadera naturaleza.",
-      link: "/razas/j_razas",
+      link: "/reglas/m_reglas",
     },
     {
       id: 3,
