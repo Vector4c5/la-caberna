@@ -9,7 +9,7 @@ export default function jugadores() {
       title: "Monstruos",
       image: "/Portada_monstruos.jpeg",
       description: "Elije tus monstruos y has sufrir a tus jugadores",
-      link: "/",
+      link: "/monsters/m_monsters",
     },
     {
       id: 2,

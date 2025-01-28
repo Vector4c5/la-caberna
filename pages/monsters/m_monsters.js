@@ -2,24 +2,24 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Header from "@/components/common/Header";
 
-export default function Hechizos() {
+export default function Monster() {
     const router = useRouter();
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
         const fetchClasses = async () => {
             try {
-                const response = await fetch("https://www.dnd5eapi.co/api/spells");
+                const response = await fetch("https://www.dnd5eapi.co/api/monsters");
                 const data = await response.json();
                 const formattedClasses = data.results.map((classItem, index) => ({
                     id: index + 1,
                     title: classItem.name,
-                    description: `Descubre los secretos de ${classItem.name} y vuelvete mas fuerte`,
-                    link: `/hechizos/${classItem.index}`,
+                    description: `Has sufrir a tus jugadores con ${classItem.name}`,
+                    link: `/monsters/${classItem.index}`,
                 }));
                 setClasses(formattedClasses);
             } catch (error) {
-                console.error("Error fetching classes:", error);
+                console.error("Error fetching monsters:", error);
             }
         };
 
@@ -27,7 +27,7 @@ export default function Hechizos() {
     }, []);
 
     const handleClaseClick = (index) => {
-        router.push(`/hechizos/${index}`);
+        router.push(`/monsters/${index}`);
     };
 
     return (
@@ -47,8 +47,8 @@ export default function Hechizos() {
                     fontFamily: "'Press Start 2P', cursive",
                 }}
             >
-                <h1 className="text-center text-4xl w-full text-white">Hechizos D&D</h1>
-                <h2 className="text-xl text-center text-cyan-400">Elige tus habilidades</h2>
+                <h1 className="text-center text-4xl w-full text-white">Monsters D&D</h1>
+                <h2 className="text-xl text-center text-cyan-400">Elige tus monstruos</h2>
             </div>
 
             {/* Grid de clases */}

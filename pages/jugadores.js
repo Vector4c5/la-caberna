@@ -21,7 +21,7 @@ export default function jugadores() {
     {
       id: 3,
       title: "Hechizos",
-      image: "/placeholder-book.jpg",
+      image: "/Portada_Hechizos.jpeg",
       description: "Descubre todos los hechizos disponibles para tu aventura..",
       link: "/hechizos/hechizos",
     },

@@ -66,6 +66,7 @@ export default function HechizosDetalles() {
           <p>{hechizo.desc}</p>
           <p>{hechizo.higher_level}</p>
         </div>
+
         <div className="container flex flex-col p-6 w-1/2 h-auto bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
           <h2 className="text-2xl text-center font-['Press_Start_2P']">
             Characteristics:
@@ -73,7 +74,7 @@ export default function HechizosDetalles() {
           <ul className="flex flex-col list-disc pl-5">
             <p>
               {" "}
-              <strong>Level:</strong> {hechizo.level}
+              <strong>You need this level to use it:</strong> {hechizo.level}
             </p>
 
             <p>
