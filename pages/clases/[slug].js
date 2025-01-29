@@ -78,16 +78,16 @@ export default function ClaseDetalle() {
               <p className="text-lg text-white">Hit Die: d{claseData.hit_die}</p>
             </div>
 
-            <ul className="list-disc list-inside my-4">
+            <ul className="list-disc list-inside my-4 text-white">
               When you start with this class, you must...
               {claseData.proficiency_choices.map((desc) => (
-                <li key={desc.desc}>{desc.desc}</li>
+                <li key={desc.desc} className="text-white">{desc.desc}</li>
               ))}
             </ul>
             <h3 className="text-xl mb-2 text-white">Proficiencies:</h3>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside text-white">
               {claseData.proficiencies.map((prof) => (
-                <li key={prof.index}><p className="text-white">{prof.name}</p></li>
+                <li key={prof.index} className="text-white">{prof.name}</li>
               ))}
             </ul>
           </div>

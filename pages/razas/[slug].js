@@ -65,7 +65,7 @@ export default function RaceDetail() {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black">
         <h2
-          className="text-4xl text-white"
+          className="text-2xl md:text-4xl text-white"
           style={{ fontFamily: "'Press Start 2P', cursive" }}
         >
           Loading...
@@ -77,7 +77,7 @@ export default function RaceDetail() {
   if (!raceData) return null;
 
   return (
-    <div className="flex flex-col container mx-auto px-4 py-8">
+    <div className="flex flex-col bg-black container mx-auto px-4 py-8">
       <div className="w-full h-auto flex justify-center mb-5">
         <Header />
       </div>
@@ -90,59 +90,59 @@ export default function RaceDetail() {
         className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
       />
       <h1
-        className="text-5xl mb-6 text-center z-20"
+        className="text-3xl md:text-5xl mb-6 text-center z-20 text-white"
         style={{ fontFamily: "'Press Start 2P', cursive" }}
       >
         {raceData.name}
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-20">
-        <div className="bg-slate-700 bg-opacity-80 p-6 rounded-lg shadow-md">
+        <div className="bg-slate-700 bg-opacity-80 p-4 md:p-6 rounded-lg shadow-md">
           <h2
-            className="text-2xl text-center mb-4"
+            className="text-xl md:text-2xl text-center mb-4 text-white"
             style={{ fontFamily: "'Press Start 2P', cursive" }}
           >
             Characteristics
           </h2>
           <div className="space-y-4">
-            <p className="text-lg">Speed: {raceData.speed}</p>
-            <p className="text-lg">Size: {raceData.size}</p>
-            <p className="text-lg">
+            <p className="text-base md:text-lg text-white">Speed: {raceData.speed}</p>
+            <p className="text-base md:text-lg text-white">Size: {raceData.size}</p>
+            <p className="text-base md:text-lg text-white">
               Size Description: {raceData.size_description}
             </p>
 
-            <h3 className="text-xl mb-2">Ability Bonuses:</h3>
-            <ul className="list-disc list-inside">
+            <h3 className="text-lg md:text-xl mb-2 text-white">Ability Bonuses:</h3>
+            <ul className="list-disc list-inside text-white">
               {raceData.ability_bonuses?.map((bonus, index) => (
-                <li key={index}>
+                <li key={index} className="text-white">
                   {bonus.ability_score.name}: +{bonus.bonus}
                 </li>
               ))}
             </ul>
 
-            <h3 className="text-xl mb-2">Languages:</h3>
-            <p>{raceData.language_desc}</p>
-            <ul className="list-disc list-inside">
+            <h3 className="text-lg md:text-xl mb-2 text-white">Languages:</h3>
+            <p className="text-white">{raceData.language_desc}</p>
+            <ul className="list-disc list-inside text-white">
               {raceData.languages?.map((lang) => (
-                <li key={lang.index}>{lang.name}</li>
+                <li key={lang.index} className="text-white">{lang.name}</li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="bg-slate-700 bg-opacity-80 p-6 rounded-lg shadow-md">
+        <div className="bg-slate-700 bg-opacity-80 p-4 md:p-6 rounded-lg shadow-md">
           <h2
-            className="text-2xl text-center mb-4"
+            className="text-xl md:text-2xl text-center mb-4 text-white"
             style={{ fontFamily: "'Press Start 2P', cursive" }}
           >
             Racial Traits
           </h2>
           {raceData.traitsDetails && (
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside text-white">
               {raceData.traitsDetails.map((trait) => (
                 <div key={trait.index} className="mb-4">
-                  <h3 className="text-xl font-bold">{trait.name}</h3>
-                  <p>{trait.desc[0]}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white">{trait.name}</h3>
+                  <p className="text-white">{trait.desc[0]}</p>
                 </div>
               ))}
             </ul>
@@ -151,15 +151,15 @@ export default function RaceDetail() {
           {raceData.subracesDetails && raceData.subracesDetails.length > 0 && (
             <div className="mt-6">
               <h2
-                className="text-2xl mb-4"
+                className="text-xl md:text-2xl mb-4 text-white"
                 style={{ fontFamily: "'Press Start 2P', cursive" }}
               >
                 Subraces
               </h2>
               {raceData.subracesDetails.map((subrace) => (
                 <div key={subrace.index} className="mb-4">
-                  <h3 className="text-xl font-bold">{subrace.name}</h3>
-                  <p>{subrace.desc}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white">{subrace.name}</h3>
+                  <p className="text-white">{subrace.desc}</p>
                 </div>
               ))}
             </div>

@@ -46,7 +46,7 @@ export default function EquipamientoDetalles() {
   if (!equipo) return null;
 
   return (
-    <div className="fixed flex flex-col items-center w-full h-screen bg-black bg-opacity-40 p-4 sm:p-10 overflow-y-auto">
+    <div className="bg-black w-full flex flex-col items-center gap-4 h-screen px-4 py-8 sm:p-10 overflow-y-auto">
       <img
         src="/Fondo_Biblioteca.jpeg"
         alt="Fondo bienvenida"
@@ -58,36 +58,37 @@ export default function EquipamientoDetalles() {
       <div className="fixed w-full h-screen z-10 opacity-40">
         <StarAnimation />
       </div>
-      <h2 className="text-center text-2xl sm:text-4xl font-['Press_Start_2P'] mb-5 z-30">
+      <div className="container flex flex-col items-center z-10">
+      <h2 className="text-center text-white text-2xl sm:text-4xl font-['Press_Start_2P'] mb-5 z-30">
         {equipo.name}
       </h2>
 
       <div className="container w-full sm:w-11/12 h-auto bg-gray-800 bg-opacity-80 rounded-xl z-20 p-4 sm:p-6">
-        <p className="text-lg sm:text-2xl text-center col-span-2">
+        <p className="text-lg text-white sm:text-2xl text-center col-span-2">
           {equipo.desc}
         </p>
         <div className="container grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 sm:p-6 w-full h-auto text-justify">
           <div>
-            <p className="text-lg sm:text-2xl">
+            <p className="text-lg text-white sm:text-2xl">
               <strong>Category:</strong>
-              <ul className="flex flex-col list-disc pl-5">
+              <ul className="flex flex-col list-disc pl-5 text-white">
                 <li>{equipo.equipment_category.name}</li>
               </ul>
             </p>
           </div>
           <div>
-            <p className="text-lg sm:text-2xl">
+            <p className="text-lg sm:text-2xl text-white">
               <strong>Equipament Category:</strong>
-              <ul className="flex flex-col list-disc pl-5">
+              <ul className="flex flex-col list-disc pl-5 text-white">
                 <li>{equipo.equipment_category.name}</li>
               </ul>
             </p>
           </div>
 
           <div>
-            <p className="text-lg sm:text-2xl">
+            <p className="text-lg sm:text-2xl text-white">
               <strong>Cost:</strong>
-              <ul className="flex flex-col list-disc pl-5">
+              <ul className="flex flex-col list-disc pl-5 text-white">
                 <li>
                   {equipo.cost.quantity} {equipo.cost.unit}
                 </li>
@@ -95,15 +96,16 @@ export default function EquipamientoDetalles() {
             </p>
           </div>
           <div>
-            <p className="text-lg sm:text-2xl">
+            <p className="text-lg sm:text-2xl text-white">
               <strong>Weight:</strong>
-              <ul className="flex flex-col list-disc pl-5">
+              <ul className="flex flex-col list-disc pl-5 text-white">
                 <li>{equipo.weight} lbs</li>
               </ul>
             </p>
           </div>
-          {/* Add more specific fields as needed */}
+      
         </div>
+      </div>
       </div>
     </div>
   );
