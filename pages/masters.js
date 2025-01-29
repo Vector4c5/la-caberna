@@ -6,16 +6,16 @@ export default function jugadores() {
   const books = [
     {
       id: 1,
-      title: "Monstruos",
+      title: "Monsters",
       image: "/Portada_monstruos.jpeg",
-      description: "Elije tus monstruos y has sufrir a tus jugadores",
+      description: "Choose your monsters and make your players suffer",
       link: "/monsters/m_monsters",
     },
     {
       id: 2,
       title: "Rules",
-      image: "/Portada_reglas.jpeg",
-      description: "El caos causa la guerra, el orden trae la paz",
+      image: "/Portada_Reglas.jpeg",
+      description: "Chaos causes war, order brings peace",
       link: "/reglas/m_reglas",
     },
   ];
