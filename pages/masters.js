@@ -21,8 +21,11 @@ export default function jugadores() {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full h-full bg-black p-4 md:p-10 md:px-32">
+    <div className="flex flex-col items-center w-full h-screen bg-black p-4 md:p-10 md:px-32 overflow-y-auto">
       <Header />
+      <div className="fixed w-full h-screen z-10 opacity-40">
+        <StarAnimation />
+      </div>
       <img
         src="/Fondo_Biblioteca.jpeg"
         alt="Fondo bienvenida"
