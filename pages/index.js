@@ -78,26 +78,80 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col items-center w-full h-auto mt-6">
-            <h2 className="text-3xl text-center w-full text-white text-shadow-lg shadow-purple-100 font-['Press_Start_2P']
-            bg-black bg-opacity-40 rounded-2xl p-5">
+            <div className="container flex flex-col items-center w-11/12 h-auto bg-gray-800 bg-opacity-50 rounded-2xl p-5 
+            border-dashed border-4 border-orange-900">
+            <h2
+              className="text-3xl text-center w-full text-white text-shadow-lg shadow-purple-100 font-['Press_Start_2P'] p-5"
+            >
               ¡Bienvenido a la caverna!
             </h2>
-            <p className="text-center text-xl mb-5 p-5 font-['Press_Start_2P'] 
-            bg-black bg-opacity-40 rounded-2xl">
+            <p
+              className="text-center text-xl mb-5 p-5 font-['Press_Start_2P']"
+            >
               Si eres un aventurero novato o un Dungeon Master en busca de
               recursos, has llegado al lugar correcto. En **La Caverna**,
               encontrarás guías, herramientas y consejos para comenzar tu viaje
-              en Dungeons & Dragons. Desde reglas básicas hasta ideas para
-              crear tu propia campaña, aquí tienes todo lo necesario para
-              adentrarte en el mundo del rol. ¡Toma tu dado, reúne a tu grupo y
-              prepárate para la aventura!
+              en Dungeons & Dragons. Desde reglas básicas hasta ideas para crear
+              tu propia campaña, aquí tienes todo lo necesario para adentrarte
+              en el mundo del rol. ¡Toma tu dado, reúne a tu grupo y prepárate
+              para la aventura!
             </p>
+            </div>
+            
+
+          </div>
+          <div className="flex w-11/12 h-auto justify-center gap-4 my-6">
+
+          <div className="flex flex-col w-1/2 h-auto p-5 m-2 bg-gray-800 bg-opacity-50 rounded-2xl
+          border-dashed border-4 border-blue-900">
+          <h2 className="text-3xl text-center w-full text-whit font-['Press_Start_2P']
+            p-5">¿Buscas con quién jugar? </h2>
+            <p className="text-justify text-lg">
+              Dungeons & Dragons (D&D) es un juego de rol donde las historias
+              cobran vida en mundos de fantasía épica. Para disfrutar la
+              aventura, un buen grupo es clave. Únete a nuestro Grupo Cerrado de
+              Facebook, conecta con jugadores y DMs, y encuentra partidas tanto
+              en línea como presenciales. ¡Vive la magia de D&D junto a la
+              comunidad!
+            </p>
+            <div className="w-full h-autp flex justify-center my-4">
+            <Link
+            className="group w-auto h-auto p-4 m-2 bg-red-700 border-solid border-2 border-white hover:scale-105 hover:bg-red-600 transition-all ease-out 
+            duration-500"
+            href="https://discord.gg/YzqMRypkYz">
+              <h3 className="text-justify text-lg font-['Press_Start_2P']">!Unete a la comunidad¡</h3>
+
+            </Link>
+            </div>
+          </div>
+          <div className="flex flex-col w-1/2 h-auto p-5 m-2 bg-gray-800 bg-opacity-50 rounded-2xl
+          border-dashed border-4 border-green-900">
+          <h2 className="text-3xl text-center w-full text-whit font-['Press_Start_2P']
+            p-5">¿Te interesa saber mas de nosotros? </h2>
+            <p className="text-justify text-lg">
+              La caverna es proyecto creado para ayudar a los jugadores de rol inexpwrtos a adentrarse en el mundo de D&D,
+              ademas de ayudar a los masters a crear sus propias campañas y a mejorar su experiencia en el juego. si quieres saber mas de nosotros
+              siguenos en nuestras redes sociales.
+            </p>
+            <div className="w-full h-autp flex justify-center my-4">
+            <Link
+            className="group w-auto h-auto p-4 m-2 bg-pink-700 border-solid border-2 border-white hover:scale-105 hover:bg-pink-600 transition-all ease-out 
+            duration-500"
+            href="https://www.instagram.com/vector4c57/">
+              <h3 className="text-justify text-lg font-['Press_Start_2P']">!Siguenos en instagram¡</h3>
+
+            </Link>
+            </div>
+          </div>
           </div>
 
           {/* <div className="flex w-full justify-center gap-4">
             <NeonButton>Jugadores</NeonButton>
             <NeonButton>Masters</NeonButton>
           </div> */}
+          <h1 className="text-justify text-2xl w-full text-white font-['Press_Start_2P'] my-5">
+            Bueno basta de charla, inicia tu aventura o crea tu propia historia, hechale un vistaso a nuestras colecciones
+          </h1>
 
           <div className="flex justify-center gap-7 w-8/12 h-auto pb-10">
             <Link

@@ -13,38 +13,11 @@ export default function jugadores() {
     },
     {
       id: 2,
-      title: "Raza",
-      image: "/",
-      description: "¿Te apetece seguir siendo humano? ¿no? Entonces ven y descubre tu verdadera naturaleza.",
+      title: "Rules",
+      image: "/Portada_reglas.jpeg",
+      description: "El caos causa la guerra, el orden trae la paz",
       link: "/reglas/m_reglas",
     },
-    {
-      id: 3,
-      title: "Trasfondos",
-      image: "/placeholder-book.jpg",
-      description: "Crea tu propia historia y cuenta tus grandes hazañas."
-    },
-    {
-      id: 4,
-      title: "Guía de Hechizos",
-      image: "/placeholder-book.jpg",
-      description: "Descubre todos los hechizos disponibles para tu aventura.",
-      link: "/personaje",
-    },
-    {
-      id: 5,
-      title: "Guía de Hechizos",
-      image: "/placeholder-book.jpg",
-      description: "Descubre todos los hechizos disponibles para tu aventura.",
-      link: "/personaje",
-    },
-    {
-      id: 6,
-      title: "Guía de Hechizos",
-      image: "/placeholder-book.jpg",
-      description: "Descubre todos los hechizos disponibles para tu aventura.",
-      link: "/personaje",
-    }
   ];
 
   return (

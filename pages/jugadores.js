@@ -27,25 +27,11 @@ export default function jugadores() {
     },
     {
       id: 4,
-      title: "Guía de Hechizos",
+      title: "Equipo",
       image: "/placeholder-book.jpg",
-      description: "Descubre todos los hechizos disponibles para tu aventura.",
-      link: "/personaje",
+      description: "Elige tus armas y equipo para la aventura.",
+      link: "/equipamiento/j_equipamiento",
     },
-    {
-      id: 5,
-      title: "Guía de Hechizos",
-      image: "/placeholder-book.jpg",
-      description: "Descubre todos los hechizos disponibles para tu aventura.",
-      link: "/personaje",
-    },
-    {
-      id: 6,
-      title: "Guía de Hechizos",
-      image: "/placeholder-book.jpg",
-      description: "Descubre todos los hechizos disponibles para tu aventura.",
-      link: "/personaje",
-    }
   ];
 
   return (
