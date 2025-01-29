@@ -5,30 +5,30 @@ import StarAnimation from "@/components/common/StartAnimation";
 
 export default function Hechizos() {
   const router = useRouter();
-  const [classes, setClasses] = useState([]);
+  const [equipo, setEquipo] = useState([]);
 
   useEffect(() => {
-    const fetchClasses = async () => {
+    const fetchEquipamiento = async () => {
       try {
-        const response = await fetch("https://www.dnd5eapi.co/api/spells");
+        const response = await fetch("https://www.dnd5eapi.co/api/equipment");
         const data = await response.json();
-        const formattedClasses = data.results.map((classItem, index) => ({
+        const formattedEquipamiento = data.results.map((equipItem, index) => ({
           id: index + 1,
-          title: classItem.name,
-          description: `Discover the secrets of ${classItem.name} and become stronger`,
-          link: `/hechizos/${classItem.index}`,
+          title: equipItem.name,
+          description: `Descubre los secretos de ${equipItem.name} y vuelvete mas fuerte`,
+          link: `/equipamiento/${equipItem.index}`,
         }));
-        setClasses(formattedClasses);
+        setEquipo(formattedEquipamiento);
       } catch (error) {
-        console.error("Error fetching classes:", error);
+        console.error("Error fetching equipamiento:", error);
       }
     };
 
-    fetchClasses();
+    fetchEquipamiento();
   }, []);
 
-  const handleClaseClick = (index) => {
-    router.push(`/hechizos/${index}`);
+  const handleEquipoClick = (index) => {
+    router.push(`/equipamiento/${index}`);
   };
 
   return (
@@ -41,7 +41,7 @@ export default function Hechizos() {
       </div>
       <img
         src="/Fondo_Biblioteca.jpeg"
-        alt="Welcome background"
+        alt="Fondo bienvenida"
         className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
       />
       <div
@@ -53,17 +53,17 @@ export default function Hechizos() {
           fontFamily: "'Press Start 2P', cursive",
         }}
       >
-        <h1 className="text-center text-4xl w-full text-white">D&D Spells</h1>
+        <h1 className="text-center text-4xl w-full text-white">Equipamentos D&D</h1>
         <h2 className="text-xl text-center text-cyan-400">
-          Choose your skills
+          Elige tus herramientas
         </h2>
       </div>
 
       <div className="grid grid-cols-3 gap-8 mt-12 w-full z-20">
-        {classes.map((classItem) => (
-          <div key={classItem.id} className="flex justify-center">
+        {equipo.map((equipItem) => (
+          <div key={equipItem.id} className="flex justify-center">
             <button
-              onClick={() => handleClaseClick(classItem.link.split("/").pop())}
+              onClick={() => handleEquipoClick(equipItem.link.split("/").pop())}
               className="w-full h-32 px5 py2.5 mt-2 relative group overflow-hidden font-medium
                             bg-slate-700 bg-opacity-70 text-white inline-block transition-all duration-500
                             rounded-lg shadow-md shadow-white
@@ -76,7 +76,7 @@ export default function Hechizos() {
                     fontFamily: "'Press Start 2P', cursive",
                   }}
                 >
-                  {classItem.title}
+                  {equipItem.title}
                 </h3>
               </div>
               <div
@@ -88,7 +88,7 @@ export default function Hechizos() {
                   className="relative bg-white bg-opacity-80 rounded-lg m-6 p-4 
                                     text-center text-sm text-black font-['Press_Start_2P']"
                 >
-                  {classItem.description}
+                  {equipItem.description}
                 </p>
               </div>
             </button>

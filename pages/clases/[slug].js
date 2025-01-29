@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Header from "@/components/common/Header";
+import StarAnimation from "@/components/common/StartAnimation";
 
 export default function ClaseDetalle() {
   const router = useRouter();
@@ -34,7 +36,7 @@ export default function ClaseDetalle() {
           className="text-4xl text-white"
           style={{ fontFamily: "'Press Start 2P', cursive" }}
         >
-          Cargando...
+          Loading...
         </h2>
       </div>
     );
@@ -43,9 +45,19 @@ export default function ClaseDetalle() {
   if (!claseData) return null;
 
   return (
-    <>
-      <div className="container mx-auto px-4 py-8">
-     
+    <div className="relative container mx-auto px-4 py-8">
+      <div className="w-full h-auto flex justify-center mb-5">
+            <Header />
+        </div>
+        <div className="fixed w-full h-screen z-10 opacity-40">
+            <StarAnimation />
+        </div>
+       <img
+            src="/Fondo_Biblioteca.jpeg"
+            alt="Fondo bienvenida"
+            className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
+        />
+      <div className="relative z-10">
         <h1
           className="text-4xl mb-6 text-center"
           style={{ fontFamily: "'Press Start 2P', cursive" }}
@@ -54,41 +66,39 @@ export default function ClaseDetalle() {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Información Principal */}
+          {/* Main Information */}
           <div className="bg-slate-700 bg-opacity-30 p-6 rounded-lg shadow-md">
             <h2
               className="text-2xl text-center mb-4"
               style={{ fontFamily: "'Press Start 2P', cursive" }}
             >
-              Características
+              Features
             </h2>
             <div className="space-y-4">
-              <p className="text-lg">Dado de Golpe: d{claseData.hit_die}</p>
+              <p className="text-lg">Hit Die: d{claseData.hit_die}</p>
             </div>
-            
+
             <ul className="list-disc list-inside my-4">
-                When you start with this class, you must... 
-                {claseData.proficiency_choices.map((desc) => (
-                  <li key={desc.desc}>
-                    {desc.desc}
-                  </li>
-                ))}
-              </ul>
-              <h3 className="text-xl mb-2">Proficiencias:</h3>
-                <ul className="list-disc list-inside">
-                  {claseData.proficiencies.map((prof) => (
-                    <li key={prof.index}>{prof.name}</li>
-                  ))}
-                </ul>
+              When you start with this class, you must...
+              {claseData.proficiency_choices.map((desc) => (
+                <li key={desc.desc}>{desc.desc}</li>
+              ))}
+            </ul>
+            <h3 className="text-xl mb-2">Proficiencies:</h3>
+            <ul className="list-disc list-inside">
+              {claseData.proficiencies.map((prof) => (
+                <li key={prof.index}>{prof.name}</li>
+              ))}
+            </ul>
           </div>
 
-          {/* Equipamiento Inicial */}
+          {/* Starting Equipment */}
           <div className="bg-slate-700 bg-opacity-30 p-6 rounded-lg shadow-md">
             <h2
               className="text-2xl text-center mb-4"
               style={{ fontFamily: "'Press Start 2P', cursive" }}
             >
-              Equipamiento Inicial
+              Starting Equipment
             </h2>
             <ul className="list-disc list-inside">
               {claseData.starting_equipment.map((equip, index) => (
@@ -100,6 +110,6 @@ export default function ClaseDetalle() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

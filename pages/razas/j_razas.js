@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Header from "@/components/common/Header";
+import StarAnimation from "@/components/common/StartAnimation";
+
 
 export default function Clases() {
   const router = useRouter();
@@ -32,7 +34,12 @@ export default function Clases() {
 
   return (
     <div className="flex flex-col w-full h-full bg-black p-10 px-32">
-      <Header />
+      <div className="w-full h-auto flex justify-center mb-5">
+        <Header />
+      </div>
+      <div className="fixed w-full h-screen z-10 opacity-40">
+        <StarAnimation />
+      </div>
       <img
         src="/Fondo_Biblioteca.jpeg"
         alt="Fondo bienvenida"
@@ -40,7 +47,7 @@ export default function Clases() {
       />
       <div
         className="container flex flex-col items-center gap-3 w-full h-auto border-solid border-white border-b-2 border-t-2 p-5 
-        animate-fade-in-down"
+        animate-fade-in-down z-20"
         style={{
           boxShadow:
             "0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 -10px 15px -3px rgba(255, 255, 255, 0.1)",
@@ -52,7 +59,7 @@ export default function Clases() {
       </div>
 
       {/* Grid de clases */}
-      <div className="grid grid-cols-3 gap-8 mt-12 w-full">
+      <div className="grid grid-cols-3 gap-8 mt-12 w-full z-20">
         {classes.map((classItem, index) => (
           <div
             key={classItem.id}

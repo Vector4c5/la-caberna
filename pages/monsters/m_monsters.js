@@ -3,24 +3,24 @@ import { useRouter } from "next/router";
 import Header from "@/components/common/Header";
 import StarAnimation from "@/components/common/StartAnimation";
 
-export default function Hechizos() {
+export default function Monster() {
   const router = useRouter();
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
     const fetchClasses = async () => {
       try {
-        const response = await fetch("https://www.dnd5eapi.co/api/spells");
+        const response = await fetch("https://www.dnd5eapi.co/api/monsters");
         const data = await response.json();
         const formattedClasses = data.results.map((classItem, index) => ({
           id: index + 1,
           title: classItem.name,
-          description: `Discover the secrets of ${classItem.name} and become stronger`,
-          link: `/hechizos/${classItem.index}`,
+          description: `Make your players suffer with ${classItem.name}`,
+          link: `/monsters/${classItem.index}`,
         }));
         setClasses(formattedClasses);
       } catch (error) {
-        console.error("Error fetching classes:", error);
+        console.error("Error fetching monsters:", error);
       }
     };
 
@@ -28,7 +28,7 @@ export default function Hechizos() {
   }, []);
 
   const handleClaseClick = (index) => {
-    router.push(`/hechizos/${index}`);
+    router.push(`/monsters/${index}`);
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Hechizos() {
       <div className="w-full h-auto flex justify-center mb-5">
         <Header />
       </div>
-      <div className="fixed w-full h-screen z-10 opacity-40">
+      <div className="fixed w-full h-screen z-0 opacity-40">
         <StarAnimation />
       </div>
       <img
@@ -46,20 +46,21 @@ export default function Hechizos() {
       />
       <div
         className="container flex flex-col  items-center gap-3 w-10/12 h-auto border-solid border-white border-b-2 border-t-2 p-5 
-                animate-fade-in-down z-20"
+                animate-fade-in-down Z-20"
         style={{
           boxShadow:
             "0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 -10px 15px -3px rgba(255, 255, 255, 0.1)",
           fontFamily: "'Press Start 2P', cursive",
         }}
       >
-        <h1 className="text-center text-4xl w-full text-white">D&D Spells</h1>
+        <h1 className="text-center text-4xl w-full text-white">D&D Monsters</h1>
         <h2 className="text-xl text-center text-cyan-400">
-          Choose your skills
+          Choose your monsters
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-8 mt-12 w-full z-20">
+      {/* Grid of classes */}
+      <div className="grid grid-cols-3 gap-8 mt-12 w-full Z-20">
         {classes.map((classItem) => (
           <div key={classItem.id} className="flex justify-center">
             <button
