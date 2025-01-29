@@ -45,7 +45,7 @@ export default function ClaseDetalle() {
   if (!claseData) return null;
 
   return (
-    <div className="relative container mx-auto px-4 py-8">
+    <div className="relative container bg-black  mx-auto px-4 py-8">
       <div className="w-full h-auto flex justify-center mb-5">
             <Header />
         </div>
@@ -69,7 +69,7 @@ export default function ClaseDetalle() {
           {/* Main Information */}
           <div className="bg-slate-700 bg-opacity-80 p-6 rounded-lg shadow-md">
             <h2
-              className="text-2xl text-center mb-4"
+              className="text-2xl text-center mb-4 text-white "
               style={{ fontFamily: "'Press Start 2P', cursive" }}
             >
               Features

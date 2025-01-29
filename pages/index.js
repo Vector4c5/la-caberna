@@ -80,7 +80,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl text-center w-full text-white text-shadow-lg shadow-purple-100 font-['Press_Start_2P'] p-5">
                 ¡Bienvenido a la caverna!
               </h2>
-              <p className="text-justify text-2xl sm:text-xl mb-5 p-4">
+              <p className="text-justify text-white  text-2xl sm:text-xl mb-5 p-4">
                 Si eres un aventurero novato o un Dungeon Master en busca de
                 recursos, has llegado al lugar correcto. En **La Caverna**,
                 encontrarás guías, herramientas y consejos para comenzar tu
@@ -97,7 +97,7 @@ export default function Home() {
           border-dashed border-4 border-blue-900"
             >
               <h2
-                className="text-2xl sm:text-3xl text-center w-full text-whit font-['Press_Start_2P']
+                className="text-2xl text-white  sm:text-3xl text-center w-full text-whit font-['Press_Start_2P']
             p-5"
               >
                 ¿Buscas con quién jugar?{" "}
