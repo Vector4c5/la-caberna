@@ -29,10 +29,10 @@ export default function Home() {
 
         <div className="relative flex flex-col justify-center items-center w-full h-screen p-8 z-10">
           <h1 className="text-center font-extrabold text-white text-4xl sm:text-6xl md:text-9xl font-dm-serif text-shadow-xl">
-            La Caverna
+            The Cavern
           </h1>
           <p className="pl-3 pb-4 text-white text-xl sm:text-2xl md:text-4xl font-dm-serif text-shadow-xl">
-            ¡Un mundo de aventuras te espera!
+            A world of adventure awaits you!
           </p>
 
           <button
@@ -46,7 +46,7 @@ export default function Home() {
                 ease-out transform translate-x-0 bg-teal-400 group-hover:h-full opacity-90"
             ></span>
             <span className="relative group-hover:text-black font-mono text-lg sm:text-2xl">
-              ¡Inicia tu aventura!
+              Start your adventure!
             </span>
           </button>
         </div>
@@ -60,11 +60,11 @@ export default function Home() {
             : "opacity-0 pointer-events-none"
         } w-full h-screen flex flex-col items-center overflow-y-auto`}
       >
-         <img
-        src="/img_interior_caverna.jpeg"
-        alt="Welcome background"
-        className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
-      />
+        <img
+          src="/img_interior_caverna.jpeg"
+          alt="Welcome background"
+          className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
+        />
 
         <div className="relative container flex flex-col items-center w-11/12 h-full z-10 mt-8 ">
           <div className="w-full h-28">
