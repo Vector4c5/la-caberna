@@ -33,7 +33,7 @@ export default function jugadores() {
       />
       <div
         className="container flex flex-col items-center gap-3 w-full md:w-10/12 h-auto border-solid border-white border-b-2 border-t-2 p-5 
-        animate-fade-in-down"
+        animate-fade-in-down z-20"
         style={{
           boxShadow: "0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 -10px 15px -3px rgba(255, 255, 255, 0.1)",
           fontFamily: "'Press Start 2P', cursive",
@@ -43,8 +43,8 @@ export default function jugadores() {
         <h2 className="text-lg md:text-xl text-center text-cyan-400">Take a look at our collection.</h2>
       </div>
 
-      {/* Grid de libros */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mt-8 md:mt-12 w-full">
+     
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mt-8 md:mt-12 w-full z-20">
         {books.map((book) => (
           <div key={book.id}>
             <BookPreview
