@@ -1,5 +1,6 @@
 import Header from "@/components/common/Header";
 import BookPreview from "@/components/common/BookPreview";
+import StarAnimation from "@/components/common/StartAnimation";
 
 
 export default function jugadores() {
