@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Header from "@/components/common/Header";
+import StarAnimation from "@/components/common/StartAnimation";
 
-export default function MonstersDetalles() {
+export default function MonsterDetails() {
   const router = useRouter();
   const { slug } = router.query;
   const [monster, setMonster] = useState(null);
@@ -18,7 +20,7 @@ export default function MonstersDetalles() {
           setMonster(res.data);
           setLoading(false);
 
-          // Si el monstruo tiene habilidades especiales y spellcasting
+          // If the monster has special abilities and spellcasting
           if (res.data.special_abilities) {
             const spellcasting = res.data.special_abilities.find(
               (ability) => ability.spellcasting
@@ -50,7 +52,7 @@ export default function MonstersDetalles() {
           }
         })
         .catch((error) => {
-          console.error("Error al obtener el monstruo:", error);
+          console.error("Error fetching the monster:", error);
           setError(error);
           setLoading(false);
         });
@@ -60,7 +62,7 @@ export default function MonstersDetalles() {
   if (loading) {
     return (
       <div className="w-full h-full flex flex-col justify-center items-center">
-        <h2 className="text-5xl font-['Press_Start_2P']">Cargando...</h2>
+        <h2 className="text-5xl font-['Press_Start_2P']">Loading...</h2>
       </div>
     );
   }
@@ -69,7 +71,7 @@ export default function MonstersDetalles() {
     return (
       <div className="w-full h-full flex justify-center items-center">
         <h2 className="text-5xl text-center font-['Press_Start_2P'] w.full">
-          Error al cargar el monstruo
+          Error loading the monster
         </h2>
       </div>
     );
@@ -77,9 +79,15 @@ export default function MonstersDetalles() {
 
   return (
     <div className="flex flex-col items-center w-full h-full p-10 gap-5">
+      <div className="w-full h-auto flex justify-center mb-5">
+        <Header />
+      </div>
+      <div className="fixed w-full h-screen z-0 opacity-40">
+        <StarAnimation />
+      </div>
       <img
         src="/Fondo_Biblioteca.jpeg"
-        alt="Fondo bienvenida"
+        alt="Welcome background"
         className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-10"
       />
       <h1 className="text-5xl font-['Press_Start_2P'] text-center">
@@ -87,8 +95,8 @@ export default function MonstersDetalles() {
       </h1>
 
       <div
-        className="p-6 w-10/12 h-auto text-justify bg-gray-800 bg-opacity-85 rounded-xl gap-4 z-20
-      border-2 border-blue-300"
+        className="p-6 w-10/12 h-auto text-justify bg-gray-800 bg-opacity-80 rounded-xl gap-4 z-20
+    "
       >
         <p className="col-span-2 text-center text-xl">{monster.desc}</p>
         <div className="container grid grid-cols-2 gap-4 my-5">
