@@ -59,7 +59,7 @@ export default function ClaseDetalle() {
         />
       <div className="relative z-10">
         <h1
-          className="text-4xl mb-6 text-center"
+          className="text-4xl mb-6 text-center text-white"
           style={{ fontFamily: "'Press Start 2P', cursive" }}
         >
           {claseData.name}
@@ -75,7 +75,7 @@ export default function ClaseDetalle() {
               Features
             </h2>
             <div className="space-y-4">
-              <p className="text-lg">Hit Die: d{claseData.hit_die}</p>
+              <p className="text-lg text-white">Hit Die: d{claseData.hit_die}</p>
             </div>
 
             <ul className="list-disc list-inside my-4">
@@ -84,10 +84,10 @@ export default function ClaseDetalle() {
                 <li key={desc.desc}>{desc.desc}</li>
               ))}
             </ul>
-            <h3 className="text-xl mb-2">Proficiencies:</h3>
+            <h3 className="text-xl mb-2 text-white">Proficiencies:</h3>
             <ul className="list-disc list-inside">
               {claseData.proficiencies.map((prof) => (
-                <li key={prof.index}>{prof.name}</li>
+                <li key={prof.index}><p className="text-white">{prof.name}</p></li>
               ))}
             </ul>
           </div>
@@ -95,14 +95,14 @@ export default function ClaseDetalle() {
           {/* Starting Equipment */}
           <div className="bg-slate-700 bg-opacity-80 p-6 rounded-lg shadow-md">
             <h2
-              className="text-2xl text-center mb-4"
+              className="text-2xl text-center mb-4 text-white"
               style={{ fontFamily: "'Press Start 2P', cursive" }}
             >
               Starting Equipment
             </h2>
             <ul className="list-disc list-inside">
               {claseData.starting_equipment.map((equip, index) => (
-                <li key={index}>
+                <li key={index} className="text-white">
                   {equip.equipment.name} x {equip.quantity}
                 </li>
               ))}
