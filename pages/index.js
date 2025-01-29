@@ -102,7 +102,7 @@ export default function Home() {
               >
                 ¿Buscas con quién jugar?{" "}
               </h2>
-              <p className="text-justify text-2xl">
+              <p className="text-justify text-white text-2xl">
                 Dungeons & Dragons (D&D) es un juego de rol donde las historias
                 cobran vida en mundos de fantasía épica. Para disfrutar la
                 aventura, un buen grupo es clave. Únete a nuestro Grupo Cerrado
@@ -116,7 +116,7 @@ export default function Home() {
             duration-500"
                   href="https://discord.gg/YzqMRypkYz"
                 >
-                  <h3 className="text-center text-lg font-['Press_Start_2P']">
+                  <h3 className="text-center text-lg text-white  font-['Press_Start_2P']">
                     !Unete a la comunidad¡
                   </h3>
                 </Link>
@@ -127,12 +127,12 @@ export default function Home() {
           border-dashed border-4 border-green-900"
             >
               <h2
-                className="text-2xl sm:text-3xl text-center w-full text-whit font-['Press_Start_2P']
+                className="text-2xl sm:text-3xl text-white  text-center w-full text-whit font-['Press_Start_2P']
             p-5"
               >
                 ¿Te interesa saber mas de nosotros?{" "}
               </h2>
-              <p className="text-justify text-2xl">
+              <p className="text-justify text-white  text-2xl">
                 La caverna es proyecto creado para ayudar a los jugadores de rol
                 inexpwrtos a adentrarse en el mundo de D&D, ademas de ayudar a
                 los masters a crear sus propias campañas y a mejorar su
@@ -145,7 +145,7 @@ export default function Home() {
             duration-500"
                   href="https://www.instagram.com/vector4c57/"
                 >
-                  <h3 className="text-center text-lg font-['Press_Start_2P']">
+                  <h3 className="text-center text-white  text-lg font-['Press_Start_2P']">
                     !Siguenos en instagram¡
                   </h3>
                 </Link>
@@ -173,7 +173,7 @@ export default function Home() {
                 }}
               />
               <div className="relative h-full w-full flex justify-center items-end z-40">
-                <h3 className="text-2xl sm:text-3xl text-center font-['Press_Start_2P'] w-full p-2 bg-black bg-opacity-50">
+                <h3 className="text-2xl text-white  sm:text-3xl text-center font-['Press_Start_2P'] w-full p-2 bg-black bg-opacity-50">
                   jugadores
                 </h3>
               </div>
@@ -193,7 +193,7 @@ export default function Home() {
                 }}
               />
               <div className="relative h-full w-full flex justify-center items-end z-40">
-                <h3 className="text-2xl sm:text-3xl text-center font-['Press_Start_2P'] w-full p-2 bg-black bg-opacity-50">
+                <h3 className="text-2xl text-white  sm:text-3xl text-center font-['Press_Start_2P'] w-full p-2 bg-black bg-opacity-50">
                   Masters
                 </h3>
               </div>
