@@ -36,7 +36,7 @@ export default function jugadores() {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full h-full bg-black p-10 px-32">
+    <div className="flex flex-col items-center w-full h-full bg-black p-4 md:p-10 md:px-32">
       <div className="w-full h-auto flex justify-center mb-5">
         <Header />
       </div>
@@ -49,7 +49,7 @@ export default function jugadores() {
         className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-0"
       />
       <div
-        className="container flex flex-col items-center gap-3 w-10/12 h-auto border-solid border-white border-b-2 border-t-2 p-5 
+        className="container flex flex-col items-center gap-3 w-full md:w-10/12 h-auto border-solid border-white border-b-2 border-t-2 p-5 
         animate-fade-in-down z-20"
         style={{
           boxShadow:
@@ -57,16 +57,16 @@ export default function jugadores() {
           fontFamily: "'Press Start 2P', cursive",
         }}
       >
-        <h1 className="text-center text-4xl w-full text-white">
+        <h1 className="text-center text-2xl md:text-4xl w-full text-white">
           Welcome Player
         </h1>
-        <h2 className="text-xl text-center text-cyan-400">
+        <h2 className="text-lg md:text-xl text-center text-cyan-400">
           Take a look at our collection.
         </h2>
       </div>
 
       {/* Grid of books */}
-      <div className="grid grid-cols-3 gap-8 mt-12 w-full z-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full z-20">
         {books.map((book, index) => (
           <div key={book.id}>
             <BookPreview

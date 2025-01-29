@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Header from "@/components/common/Header";
 import StarAnimation from "@/components/common/StartAnimation";
 
-
 export default function Clases() {
   const router = useRouter();
   const [classes, setClasses] = useState([]);
@@ -33,7 +32,7 @@ export default function Clases() {
   };
 
   return (
-    <div className="flex flex-col w-full h-full bg-black p-10 px-32">
+    <div className="flex flex-col w-full h-full bg-black p-4 md:p-10 md:px-32">
       <div className="w-full h-auto flex justify-center mb-5">
         <Header />
       </div>
@@ -54,27 +53,24 @@ export default function Clases() {
           fontFamily: "'Press Start 2P', cursive",
         }}
       >
-        <h1 className="text-center text-5xl w-full text-white">Razas D&D</h1>
-        <h2 className="text-2xl text-center text-cyan-400">Elige tu historia</h2>
+        <h1 className="text-center text-3xl md:text-5xl w-full text-white">Razas D&D</h1>
+        <h2 className="text-xl md:text-2xl text-center text-cyan-400">Elige tu historia</h2>
       </div>
 
       {/* Grid de clases */}
-      <div className="grid grid-cols-3 gap-8 mt-12 w-full z-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mt-8 md:mt-12 w-full z-20">
         {classes.map((classItem, index) => (
-          <div
-            key={classItem.id}
-            className=" flex justify-center"
-          >
+          <div key={classItem.id} className="flex justify-center">
             <button
               onClick={() => handleClaseClick(classItem.link.split("/").pop())}
-              className="w-full h-32 px5 py2.5 mt-2 relative group overflow-hidden font-medium
+              className="w-full h-32 px-2 py-2 mt-2 relative group overflow-hidden font-medium
               bg-slate-700 bg-opacity-70 text-white inline-block transition-all duration-500
               rounded-lg shadow-md shadow-white
               ease-out transform hover:scale-105"
             >
               <div className="absolute inset-0 flex flex-col justify-center items-center transition-all duration-500 transform group-hover:-translate-y-full">
                 <h3
-                  className="text-2xl"
+                  className="text-lg md:text-2xl"
                   style={{
                     fontFamily: "'Press Start 2P', cursive",
                   }}
@@ -88,8 +84,8 @@ export default function Clases() {
               >
                 <span className="w-full h-full absolute opacity-90"></span>
                 <p
-                  className="relative bg-white bg-opacity-80 rounded-lg m-6 p-4 
-                  text-center text-sm text-black font-['Press_Start_2P']"
+                  className="relative bg-white bg-opacity-80 rounded-lg m-2 md:m-6 p-2 md:p-4 
+                  text-center text-xs md:text-sm text-black font-['Press_Start_2P']"
                 >
                   {classItem.description}
                 </p>
