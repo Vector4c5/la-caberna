@@ -67,7 +67,7 @@ export default function ClaseDetalle() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Main Information */}
-          <div className="bg-slate-700 bg-opacity-30 p-6 rounded-lg shadow-md">
+          <div className="bg-slate-700 bg-opacity-80 p-6 rounded-lg shadow-md">
             <h2
               className="text-2xl text-center mb-4"
               style={{ fontFamily: "'Press Start 2P', cursive" }}
@@ -93,7 +93,7 @@ export default function ClaseDetalle() {
           </div>
 
           {/* Starting Equipment */}
-          <div className="bg-slate-700 bg-opacity-30 p-6 rounded-lg shadow-md">
+          <div className="bg-slate-700 bg-opacity-80 p-6 rounded-lg shadow-md">
             <h2
               className="text-2xl text-center mb-4"
               style={{ fontFamily: "'Press Start 2P', cursive" }}

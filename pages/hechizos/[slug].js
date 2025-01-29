@@ -48,48 +48,48 @@ export default function SpellDetails() {
   if (!spell) return null;
 
   return (
-    <div className="w-full p-10 flex flex-col items-center">
-          <div className="w-full h-auto flex justify-center mb-5">
+    <div className="w-full p-4 md:p-10 flex flex-col items-center">
+      <div className="w-full h-auto flex justify-center mb-5">
         <Header />
       </div>
       <div className="fixed w-full h-screen z-10 opacity-40">
         <StarAnimation />
-        </div>
+      </div>
       <img
         src="/Fondo_Biblioteca.jpeg"
         alt="Background"
         className="fixed top-0 left-0 w-full h-full object-cover opacity-15 z-10"
       />
-      <h2 className="text-center text-4xl font-['Press_Start_2P'] mb-5 z-20">
+      <h2 className="text-center text-2xl md:text-4xl font-['Press_Start_2P'] mb-5 z-20">
         {spell.name}
       </h2>
-      <div className="container flex w-10/12 h-auto gap-4">
-        <div className="container flex flex-col p-6 w-1/2 h-auto text-justify bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
-          <h2 className="text-2xl text-center font-['Press_Start_2P']">
+      <div className="container flex flex-col md:flex-row w-full md:w-10/12 h-auto gap-4">
+        <div className="container flex flex-col p-4 md:p-6 w-full md:w-1/2 h-auto text-justify bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
+          <h2 className="text-xl md:text-2xl text-center font-['Press_Start_2P']">
             Description:
           </h2>
-          <p className="text-xl">{spell.desc}</p>
-          <p className="text-xl">{spell.higher_level}</p>
+          <p className="text-lg md:text-xl">{spell.desc}</p>
+          <p className="text-lg md:text-xl">{spell.higher_level}</p>
         </div>
 
-        <div className="container flex flex-col p-6 w-1/2 h-auto bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
-          <h2 className="text-2xl text-center font-['Press_Start_2P']">
+        <div className="container flex flex-col p-4 md:p-6 w-full md:w-1/2 h-auto bg-gray-800 bg-opacity-100 rounded-xl gap-2 z-20">
+          <h2 className="text-xl md:text-2xl text-center font-['Press_Start_2P']">
             Characteristics:
           </h2>
           <ul className="flex flex-col list-disc pl-5">
-            <p className="text-xl">
+            <p className="text-lg md:text-xl">
               <strong>Required level:</strong> {spell.level}
             </p>
 
-            <p className="text-xl">
+            <p className="text-lg md:text-xl">
               <strong>Range:</strong> {spell.range}
             </p>
 
-            <p className="text-xl">
+            <p className="text-lg md:text-xl">
               <strong>Casting time:</strong> {spell.casting_time}
             </p>
             {spell?.damage?.damage_at_slot_level && (
-              <p className="text-xl">
+              <p className="text-lg md:text-xl">
                 <strong>Damage at Slot Levels:</strong>
                 <ul className="list-disc pl-5">
                   {Object.entries(spell.damage.damage_at_slot_level).map(
@@ -102,7 +102,7 @@ export default function SpellDetails() {
                 </ul>
               </p>
             )}
-            <p className="text-xl">
+            <p className="text-lg md:text-xl">
               <strong>Classes that can use it:</strong>
               <ul className="list-disc pl-5">
                 {spell.classes.map((clase) => (

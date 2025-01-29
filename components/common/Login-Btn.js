@@ -11,13 +11,7 @@ export default function LoginBtn() {
     <div className="flex flex-col z-50">
       {session ? (
         <>
-          <div className="flex gap-2 group relative">
-            <button
-              onClick={() => setShowLoginOptions(!showLoginOptions)}
-              className="flex transition-transform group-hover:-translate-x-3 gap-2 text-center h-full hover:text-teal-400"
-            >
-              <p>{session.user.name}</p>
-            </button>
+          <div className="flex group relative">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -32,6 +26,12 @@ export default function LoginBtn() {
                 d="M5.25 4.5l7.5 7.5-7.5 7.5m6-15l7.5 7.5-7.5 7.5"
               />
             </svg>
+            <button
+              onClick={() => setShowLoginOptions(!showLoginOptions)}
+              className="flex transition-transform group-hover:translate-x-3 gap-2 text-center h-full hover:text-teal-400"
+            >
+              <p>{session.user.name}</p>
+            </button>
           </div>
 
           <div
@@ -40,21 +40,17 @@ export default function LoginBtn() {
             }`}
           >
             <div
-              className="flex flex-col justify-center items-center w-72 p-4 bg-black  text-white rounded absolute my-8 mx-0 gap-2 
-          border-2 border-white botder-solid"
+              className="flex flex-col justify-center items-center w-auto p-4 bg-black text-white rounded absolute my-8 mx-0 gap-4 
+              botder-solid right-0 sm:right-auto"
             >
-              <img
-                src={session.user.image}
-                alt="Foto de usuario"
-                className="relative h-auto w-28 rounded-full border-4 border-solid border-slate-800"
-              />
-              <p className="h-auto w-full text-sm text-center">
-                {" "}
-                {session.user.email}
+              <p className="text-center text-2xl">
+                Bienvenido <br/>
+                <strong> {session.user.name}</strong>
               </p>
-              <p className="text-center text-lg">
-                Bienvenido {session.user.name}{" "}
+              <p className="h-auto w-full text-lg text-center">
+                Correo electronico: {session.user.email}
               </p>
+              
 
               <button
                 onClick={() => signOut()}
@@ -69,12 +65,6 @@ export default function LoginBtn() {
       ) : (
         <>
           <div className="flex items-center gap-2 group relative">
-            <button
-              onClick={() => setShowLoginOptions(!showLoginOptions)}
-              className="flex transition-transform group-hover:-translate-x-3 gap-2 text-center h-full"
-            >
-              <FaUser /> Inicia Sesión
-            </button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -89,6 +79,12 @@ export default function LoginBtn() {
                 d="M5.25 4.5l7.5 7.5-7.5 7.5m6-15l7.5 7.5-7.5 7.5"
               />
             </svg>
+            <button
+              onClick={() => setShowLoginOptions(!showLoginOptions)}
+              className="flex transition-transform group-hover:translate-x-2 gap-2 text-center h-full"
+            >
+              <FaUser /> Inicia Sesión
+            </button>
           </div>
           <div
             className={`flex justify-end mt-2 transition-all duration-500 ease-in-out overflow-hidden ${
@@ -96,8 +92,8 @@ export default function LoginBtn() {
             }`}
           >
             <div
-              className="flex flex-col justify-center items-center w-72 p-4 bg-black  text-white rounded absolute my-8 
-          border-2 border-white botder-solid"
+              className="flex flex-col justify-center items-center w-72 p-4 bg-black bg-opacity-95 text-white rounded absolute my-8 
+              right-0 sm:right-auto"
             >
               <img
                 src={imgUsuario.src}
