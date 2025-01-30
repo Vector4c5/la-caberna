@@ -78,16 +78,16 @@ export default function Home() {
             border-dashed border-4 border-orange-900"
             >
               <h2 className="text-2xl sm:text-3xl text-center w-full text-white text-shadow-lg shadow-purple-100 font-['Press_Start_2P'] p-5">
-                ¡Bienvenido a la caverna!
+                Welcome to The Cavern!
               </h2>
               <p className="text-justify text-white  text-2xl sm:text-xl mb-5 p-4">
-                Si eres un aventurero novato o un Dungeon Master en busca de
-                recursos, has llegado al lugar correcto. En **La Caverna**,
-                encontrarás guías, herramientas y consejos para comenzar tu
-                viaje en Dungeons & Dragons. Desde reglas básicas hasta ideas
-                para crear tu propia campaña, aquí tienes todo lo necesario para
-                adentrarte en el mundo del rol. ¡Toma tu dado, reúne a tu grupo
-                y prepárate para la aventura!
+                If you are a novice adventurer or a Dungeon Master looking for
+                resources, you have come to the right place. In The Cavern, you
+                will find guides, tools, and tips to start your journey in
+                Dungeons & Dragons. From basic rules to ideas for creating your
+                own campaign, everything you need to dive into the world of
+                role-playing is right here. Grab your dice, gather your party,
+                and get ready for adventure!
               </p>
             </div>
           </div>
@@ -100,15 +100,14 @@ export default function Home() {
                 className="text-2xl text-white  sm:text-3xl text-center w-full text-whit font-['Press_Start_2P']
             p-5"
               >
-                ¿Buscas con quién jugar?{" "}
+                Looking for someone to play with?
               </h2>
               <p className="text-justify text-white text-2xl">
-                Dungeons & Dragons (D&D) es un juego de rol donde las historias
-                cobran vida en mundos de fantasía épica. Para disfrutar la
-                aventura, un buen grupo es clave. Únete a nuestro Grupo Cerrado
-                de Facebook, conecta con jugadores y DMs, y encuentra partidas
-                tanto en línea como presenciales. ¡Vive la magia de D&D junto a
-                la comunidad!
+                Dungeons & Dragons (D&D) is a role-playing game where stories
+                come to life in epic fantasy worlds. To enjoy the adventure, a
+                great group is key. Join our Closed Facebook Group, connect with
+                players and DMs, and find games both online and in person.
+                Experience the magic of D&D with the community!
               </p>
               <div className="w-full h-autp flex justify-center my-4">
                 <Link
@@ -117,7 +116,7 @@ export default function Home() {
                   href="https://discord.gg/YzqMRypkYz"
                 >
                   <h3 className="text-center text-lg text-white  font-['Press_Start_2P']">
-                    !Unete a la comunidad¡
+                    Join the community!
                   </h3>
                 </Link>
               </div>
@@ -130,14 +129,14 @@ export default function Home() {
                 className="text-2xl sm:text-3xl text-white  text-center w-full text-whit font-['Press_Start_2P']
             p-5"
               >
-                ¿Te interesa saber mas de nosotros?{" "}
+                Are you interested in learning more about us?
               </h2>
               <p className="text-justify text-white  text-2xl">
-                La caverna es proyecto creado para ayudar a los jugadores de rol
-                inexpwrtos a adentrarse en el mundo de D&D, ademas de ayudar a
-                los masters a crear sus propias campañas y a mejorar su
-                experiencia en el juego. si quieres saber mas de nosotros
-                siguenos en nuestras redes sociales.
+                La Caverna is a project created to help inexperienced
+                role-players dive into the world of D&D, as well as assist
+                Dungeon Masters in creating their own campaigns and enhancing
+                their game experience. If you want to learn more about us,
+                follow us on our social media!
               </p>
               <div className="w-full h-autp flex justify-center my-4">
                 <Link
@@ -146,7 +145,7 @@ export default function Home() {
                   href="https://www.instagram.com/vector4c57/"
                 >
                   <h3 className="text-center text-white  text-lg font-['Press_Start_2P']">
-                    !Siguenos en instagram¡
+                  Follow us on Instagram!
                   </h3>
                 </Link>
               </div>
@@ -155,8 +154,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center w-11/12 h-auto my-6 bg-gray-800 bg-opacity-50 rounded-2xl p-5 border-dashed border-4 border-red-900">
             <h1 className="text-center text-xl sm:text-2xl w-full text-white font-['Press_Start_2P'] my-5">
-              Bueno basta de charla, inicia tu aventura o crea tu propia
-              historia, hechale un vistaso a nuestras colecciones
+            Enough talk, start your adventure or create your own story, take a look at our collections!
             </h1>
           </div>
 
@@ -174,7 +172,7 @@ export default function Home() {
               />
               <div className="relative h-full w-full flex justify-center items-end z-40">
                 <h3 className="text-2xl text-white  sm:text-3xl text-center font-['Press_Start_2P'] w-full p-2 bg-black bg-opacity-50">
-                  jugadores
+                players
                 </h3>
               </div>
             </Link>
